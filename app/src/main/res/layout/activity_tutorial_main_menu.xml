@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_new"
+    tools:context="com.bioblu.main.activity_tutorial_main_menu">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_main_tutorial"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView_option3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="To return to the previous screen, perform the movement of L in reverse"
+        android:textColor="@color/cor_texto"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline49"
+        app:layout_constraintEnd_toStartOf="@+id/guideline74"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline75" />
+
+    <ImageView
+        android:id="@+id/imageViewTutorial"
+        android:layout_width="147dp"
+        android:layout_height="118dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView_option1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77"
+        app:srcCompat="@drawable/img1" />
+
+    <TextView
+        android:id="@+id/textView_option1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="To Navigate between options, swipe up or down"
+        android:textColor="@color/cor_texto"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline47"
+        app:layout_constraintEnd_toStartOf="@+id/guideline74"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline75" />
+
+    <TextView
+        android:id="@+id/textView_option2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="To confirm a chosen move or option, double-tap simultaneously"
+        android:textColor="@color/cor_texto"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline48"
+        app:layout_constraintEnd_toStartOf="@+id/guideline74"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline75" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.52" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.64" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.76" />
+
+    <TextView
+        android:id="@+id/textView_option5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="To stop the audio, bring your hand in front of your smartphone screen"
+        android:textColor="@color/cor_texto"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline73"
+        app:layout_constraintEnd_toStartOf="@+id/guideline74"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline75" />
+
+    <TextView
+        android:id="@+id/textView_option4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="To request help on the issue resolution screen, press and hold anywhere on the screen for 2 seconds "
+        android:textColor="@color/cor_texto"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline50"
+        app:layout_constraintEnd_toStartOf="@+id/guideline74"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline75" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline73"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="BIOBLU"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView_option1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toEndOf="@+id/imageView26"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07999998" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline74"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline73"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline74"
+        app:srcCompat="@drawable/desativar_audio" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline74"
+        app:srcCompat="@drawable/ajuda" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline48"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline74"
+        app:srcCompat="@drawable/dobletap" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline47"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline74"
+        app:srcCompat="@drawable/navegacao" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline49"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline74"
+        app:srcCompat="@drawable/setas" />
+
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView_option1"
+        app:layout_constraintStart_toStartOf="@+id/guideline75"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.060000002"
+        app:srcCompat="@drawable/logo_bioblue" />
+
+
+</android.support.constraint.ConstraintLayout>
