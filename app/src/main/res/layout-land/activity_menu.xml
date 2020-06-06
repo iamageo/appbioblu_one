@@ -26,10 +26,10 @@
         android:layout_height="61dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline60"
         app:layout_constraintEnd_toStartOf="@+id/guideline28"
-        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline29"
         app:layout_constraintTop_toTopOf="@+id/guideline10"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.888"
         app:srcCompat="@drawable/ic_list_bulleted" />
 
     <ImageView
@@ -38,7 +38,7 @@
         android:layout_height="55dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toStartOf="@+id/guideline28"
-        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline29"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
         app:layout_constraintVertical_bias="1.0"
@@ -48,12 +48,10 @@
         android:id="@+id/imageView4"
         android:layout_width="74dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toStartOf="@+id/guideline28"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:layout_constraintVertical_bias="0.562"
+        app:layout_constraintVertical_bias="0.548"
         app:srcCompat="@drawable/ic_overscan" />
 
     <android.support.constraint.Guideline
@@ -111,6 +109,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="MENDEL LAW"
         android:textColor="@color/cor_texto"
         android:textSize="30sp"
@@ -131,7 +131,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/listaQ3"
@@ -145,7 +145,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline60"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="@+id/guideline10"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.931" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -182,7 +182,7 @@
         android:layout_width="81dp"
         android:layout_height="61dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline28"
-        app:layout_constraintHorizontal_bias="0.794"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline29"
         app:layout_constraintTop_toTopOf="@+id/guideline46"
         app:srcCompat="@drawable/ic_first_law" />
