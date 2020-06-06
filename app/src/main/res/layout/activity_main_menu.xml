@@ -8,25 +8,6 @@
     android:background="@drawable/fundo_new"
     tools:context="com.bioblu.main.main_menu">
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="70dp"
-        android:layout_height="62dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline76"
-        app:layout_constraintEnd_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:srcCompat="@drawable/ic_first_law" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="60dp"
-        android:layout_height="61dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline9"
-        app:layout_constraintEnd_toStartOf="@+id/guideline28"
-        app:layout_constraintStart_toStartOf="@+id/guideline29"
-        app:layout_constraintTop_toTopOf="@+id/guideline51"
-        app:srcCompat="@drawable/ic_overscan" />
-
     <RelativeLayout
         android:id="@+id/relativeLayoutMenu"
         android:layout_width="0dp"
@@ -39,13 +20,36 @@
     </RelativeLayout>
 
     <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="70dp"
+        android:layout_height="62dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline76"
+        app:layout_constraintEnd_toStartOf="@+id/guideline28"
+        app:layout_constraintStart_toStartOf="@+id/guideline29"
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        app:layout_constraintVertical_bias="0.363"
+        app:srcCompat="@drawable/ic_first_law" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="60dp"
+        android:layout_height="61dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toStartOf="@+id/guideline28"
+        app:layout_constraintStart_toStartOf="@+id/guideline29"
+        app:layout_constraintTop_toTopOf="@+id/guideline51"
+        app:srcCompat="@drawable/ic_overscan" />
+
+    <ImageView
         android:id="@+id/imageView11"
         android:layout_width="70dp"
         android:layout_height="49dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintEnd_toStartOf="@+id/guideline28"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline29"
         app:layout_constraintTop_toTopOf="@+id/guideline76"
+        app:layout_constraintVertical_bias="0.416"
         app:srcCompat="@drawable/ic_volume" />
 
     <android.support.constraint.Guideline
@@ -67,47 +71,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.06" />
+        app:layout_constraintGuide_percent="0.04" />
 
     <TextView
         android:id="@+id/listaQ1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:text="TRAINING SCREEN"
         android:textColor="@color/cor_texto"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toTopOf="@+id/guideline51" />
+        app:layout_constraintTop_toTopOf="@+id/guideline51"
+        app:layout_constraintVertical_bias="0.545" />
 
     <TextView
         android:id="@+id/listaQ2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:text="MENDEL'S 1ST LAW"
         android:textColor="@color/cor_texto"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline76"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toTopOf="@+id/guideline9" />
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        app:layout_constraintVertical_bias="0.437" />
 
     <TextView
         android:id="@+id/listaQ4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="CONFIGURATION"
         android:textColor="@color/cor_texto"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/imageView11"
-        app:layout_constraintTop_toTopOf="@+id/guideline76" />
+        app:layout_constraintTop_toTopOf="@+id/guideline76"
+        app:layout_constraintVertical_bias="0.531" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline39"
@@ -157,14 +160,13 @@
         android:id="@+id/listaQ5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:text="REVIEW CONCEPTS"
         android:textColor="@color/cor_texto"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline52"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toTopOf="@+id/guideline39" />
+        app:layout_constraintTop_toTopOf="@+id/guideline39"
+        app:layout_constraintVertical_bias="0.625" />
 
     <TextView
         android:id="@+id/textView11"
