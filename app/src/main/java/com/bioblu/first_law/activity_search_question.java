@@ -132,7 +132,7 @@ public class activity_search_question extends AppCompatActivity {
                 {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Intent i = new Intent(getApplicationContext(), main_menu.class);
+                        Intent i = new Intent(getApplicationContext(), activity_erro.class);
                         startActivity(i);
                         finish();
                     }
@@ -224,6 +224,25 @@ public class activity_search_question extends AppCompatActivity {
                 (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         return netInfo != null && netInfo.isConnectedOrConnecting();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (textToSpeech != null) {
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        textToSpeech.stop();
+        if (textToSpeech != null) {
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
+        super.onPause();
     }
 
 

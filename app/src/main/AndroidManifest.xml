@@ -19,34 +19,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.bioblu.first_law.activity_solve_and_send_question"
-           />
-        <activity android:name="com.bioblu.first_law.activity_search_question"
-            />
-        <activity android:name="com.bioblu.main.activity_selectConceitos"
-            />
-        <activity android:name="com.bioblu.main.activity_tutorial_main_menu"
-           />
-        <activity android:name="com.bioblu.main.main_menu"
-            />
-        <activity android:name="com.bioblu.first_law.activity_tutorial_1law"
-          />
-        <activity android:name="com.bioblu.main.activity_voiceRate"
-          />
-        <activity android:name="com.bioblu.main.activity_firstRun"
-          />
-        <activity android:name="com.bioblu.first_law.activity_selecaoLetra"
-            />
-        <activity android:name="com.bioblu.first_law.activity_cruzamento"
-          />
-        <activity android:name="com.bioblu.first_law.activity_questao"
-           />
-        <activity android:name="com.bioblu.first_law.activity_SelectQuestao"
-         />
-        <activity android:name="com.bioblu.first_law.activity_menu"
-           />
-        <activity android:name="com.bioblu.main.MainActivity"
-            >
+        <activity android:name=".first_law.activity_erro"></activity>
+        <activity android:name=".first_law.activity_solve_and_send_question" />
+        <activity android:name=".first_law.activity_search_question" />
+        <activity android:name=".main.activity_selectConceitos" />
+        <activity android:name=".main.activity_tutorial_main_menu" />
+        <activity android:name=".main.main_menu" />
+        <activity android:name=".first_law.activity_tutorial_1law" />
+        <activity android:name=".main.activity_voiceRate" />
+        <activity android:name=".main.activity_firstRun" />
+        <activity android:name=".first_law.activity_selecaoLetra" />
+        <activity android:name=".first_law.activity_cruzamento" />
+        <activity android:name=".first_law.activity_questao" />
+        <activity android:name=".first_law.activity_SelectQuestao" />
+        <activity android:name=".first_law.activity_menu" />
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
