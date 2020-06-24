@@ -58,7 +58,7 @@ public class activity_erro extends AppCompatActivity  {
                     TTS.setLanguage(new Locale("en", "US"));
                     TTS.setSpeechRate(velocidade);
                     TTS.setPitch(1);
-                    TTS.speak("sorry, we were unable to locate any question with your id, please, to return to the menu, navigate to the option return to the menu and select", TextToSpeech.QUEUE_FLUSH, null);
+                    TTS.speak("Sorry, but we could not find any questions with your ID or you are not connected to the internet." + '\n' + " To return to the menu, navigate to the option return to the menu and select", TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
         });
