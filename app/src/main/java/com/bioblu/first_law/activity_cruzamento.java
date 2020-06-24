@@ -51,7 +51,7 @@ public class activity_cruzamento extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cruzamento);
         Bundle dados = getIntent().getExtras();
-        ler_velocidade();
+        velocidade = dados.getInt("velocidade");
 
         textViewFilho1 = findViewById(R.id.textViewF1_cruzamento1law);
         textViewFilho2 = findViewById(R.id.textViewF2_cruzamento1law);
@@ -74,9 +74,9 @@ public class activity_cruzamento extends AppCompatActivity {
             @Override
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
+                    ler_velocidade();
                     textToSpeech.setLanguage(new Locale("en", "US"));
                     textToSpeech.setSpeechRate(velocidade);
-                    textToSpeech.setPitch(1);
                     textToSpeech.speak("Now you are in the crossing screen. Make 4 taps to inform the Application which crossing you will make." +
                             "After that, swipe 8 times to make the crossing you informed above.", TextToSpeech.QUEUE_FLUSH, null);
                 }
@@ -141,7 +141,7 @@ public class activity_cruzamento extends AppCompatActivity {
 
             @Override
             public void doubleTap() {
-                textToSpeech.speak("Confirmado Gene "+escolhafala, TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak("\n" + "Gene confirmed "+escolhafala, TextToSpeech.QUEUE_FLUSH, null);
                 if (x >= 1 && escolha != null) {
                     if (x == 1) {
                         a1 = escolha.charAt(0);

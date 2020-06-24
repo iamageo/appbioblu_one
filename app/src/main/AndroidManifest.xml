@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bioblu">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -28,8 +29,6 @@
            />
         <activity android:name="com.bioblu.main.main_menu"
             />
-        <activity android:name="com.bioblu.first_law.activity_voiceRate_menu"
-           />
         <activity android:name="com.bioblu.first_law.activity_tutorial_1law"
           />
         <activity android:name="com.bioblu.main.activity_voiceRate"

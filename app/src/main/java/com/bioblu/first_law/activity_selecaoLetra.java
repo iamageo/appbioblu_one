@@ -50,8 +50,7 @@ public class activity_selecaoLetra extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selecao_letra);
-        Bundle dados = getIntent().getExtras();
-        velocidade = dados.getInt("velocidade");
+
         TTS = new TextToSpeech(activity_selecaoLetra.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {

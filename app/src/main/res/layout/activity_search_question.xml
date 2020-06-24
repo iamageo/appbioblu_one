@@ -18,8 +18,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline83"
-        app:layout_constraintVertical_bias="0.356" />
+        app:layout_constraintTop_toTopOf="@+id/guideline77"
+        app:layout_constraintVertical_bias="0.19999999" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout_search_question_2law"
@@ -34,25 +34,28 @@
 
     <ImageView
         android:id="@+id/imageView35"
-        android:layout_width="68dp"
-        android:layout_height="68dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline83"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline77"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline83"
         app:srcCompat="@drawable/ic_search" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="BUSCAR QUESTÕES"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="SEARCH QUESTIONS"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline83"
+        app:layout_constraintBottom_toTopOf="@+id/guideline77"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.317"
-        app:layout_constraintStart_toEndOf="@+id/imageView35" />
+        app:layout_constraintStart_toEndOf="@+id/imageView35"
+        app:layout_constraintTop_toTopOf="@+id/guideline83" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline83"
@@ -60,6 +63,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.15" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline77"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
 
 
 </android.support.constraint.ConstraintLayout>

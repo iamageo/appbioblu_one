@@ -37,8 +37,8 @@ public class activity_menu extends AppCompatActivity  {
     private int i = -1;
     private int ix = -1;
     private int fx = -1;
-    private TextView lista1, lista2, lista3;
-    private String[] opcao = {"Tutorial", "Crossing", "Questions"};
+    private TextView lista1, lista2, lista3, lista4;
+    private String[] opcao = {"Tutorial", "Crossing", "Questions", "Search Questions"};
     TextView[] cursor = new TextView[4];
     public int velocidade;
     private SensorManager sensorManager;
@@ -97,12 +97,12 @@ public class activity_menu extends AppCompatActivity  {
         lista1 = findViewById(R.id.listaQ1);
         lista2 = findViewById(R.id.listaQ2);
         lista3 = findViewById(R.id.listaQ3);
-        //lista4 = findViewById(R.id.listaQ4);
+        lista4 = findViewById(R.id.listaQ4);
 
         cursor[0] = lista1;
         cursor[1] = lista2;
         cursor[2] = lista3;
-        //cursor[3] = lista4;
+        cursor[3] = lista4;
 
         initTela();
     }
@@ -140,6 +140,13 @@ public class activity_menu extends AppCompatActivity  {
                         case "Questions": {
                             finish();
                             Intent intent = new Intent(getApplicationContext(), activity_SelectQuestao.class);
+                            intent.putExtra("velocidade", velocidade);
+                            startActivity(intent);
+                            break;
+                        }
+                        case "Search Questions": {
+                            finish();
+                            Intent intent = new Intent(getApplicationContext(), activity_search_question.class);
                             intent.putExtra("velocidade", velocidade);
                             startActivity(intent);
                             break;
@@ -197,7 +204,7 @@ public class activity_menu extends AppCompatActivity  {
                 lista1.setText(String.valueOf(opcao[l1 + yx]));
                 lista2.setText(String.valueOf(opcao[l2 + yx]));
                 lista3.setText(String.valueOf(opcao[l3 + yx]));
-                //lista4.setText(String.valueOf(opcao[l4 + yx]));
+                lista4.setText(String.valueOf(opcao[l4 + yx]));
 
             }
 

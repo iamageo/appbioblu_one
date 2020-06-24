@@ -49,7 +49,7 @@ public class activity_solve_and_send_question extends AppCompatActivity {
     int y;
     private TextToSpeech textToSpeech;
     public float velocidade;
-    private String questao, letra;
+    private String questao, letra, email;
     private SensorManager sensorManager;
     private Sensor proximitySensor;
     private SensorEventListener proximitySensorListener;
@@ -84,7 +84,7 @@ public class activity_solve_and_send_question extends AppCompatActivity {
             public void onInit(int status) {
                 ler_velocidade();
                 if (status != TextToSpeech.ERROR) {
-                    textToSpeech.setLanguage(Locale.getDefault());
+                    textToSpeech.setLanguage(new Locale("en", "US"));
                     textToSpeech.setSpeechRate(velocidade);
                     textToSpeech.speak(questao, TextToSpeech.QUEUE_FLUSH, null);
                 }
@@ -124,6 +124,7 @@ public class activity_solve_and_send_question extends AppCompatActivity {
         y = 12;
         questao = dados.getString("questao");
         letra = dados.getString("letra");
+        email = dados.getString("email");
         textView4.setText(questao);
 
         initTela();
@@ -146,12 +147,12 @@ public class activity_solve_and_send_question extends AppCompatActivity {
 
             @Override
             public void onLongPressQuestao() {
-                enviarResposta("http://10.219.1.159/api/inserir.php");
+                enviarResposta("http://200.239.66.35/bioblu/inserir.php");
             }
 
             @Override
             public void doubleTap(){
-                textToSpeech.speak("Confirmado Gene " + escolhafala, TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak("\n" + "Gene confirmed " + escolhafala, TextToSpeech.QUEUE_FLUSH, null);
                 if (x >= 1 && escolha != null) {
                     if (x == 1) {
                         c1 = escolha;
@@ -161,17 +162,17 @@ public class activity_solve_and_send_question extends AppCompatActivity {
                         if (c1.equals(c1.toUpperCase()) && d1.equals(d1.toUpperCase())) {
                             filho1.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho1.setText(g1);
-                            textToSpeech.speak("Gene Homozigoto Dominate", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak("\n" + " Dominate Homozygous Gene", TextToSpeech.QUEUE_FLUSH, null);
                             ho++;
                         } else if (c1.equals(c1.toLowerCase()) && d1.equals(d1.toUpperCase()) || c1.equals(c1.toUpperCase()) && d1.equals(d1.toLowerCase())) {
                             filho1.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho1.setText(g1);
-                            textToSpeech.speak("Gene Heterozigoto Dominate", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak("\n" + " Dominate Heterozygous Gene", TextToSpeech.QUEUE_FLUSH, null);
                             he++;
                         } else if (c1.equals(c1.toLowerCase()) && d1.equals(d1.toLowerCase())) {
                             filho1.setImageResource(R.drawable.quadrado_preenchido);
                             textViewFilho1.setText(g1);
-                            textToSpeech.speak("Gene Homozigoto Recessivo", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak("\n" + " Recessive Homozygous Gene", TextToSpeech.QUEUE_FLUSH, null);
                             re++;
                         }
                     } else if (x == 3) {
@@ -182,18 +183,18 @@ public class activity_solve_and_send_question extends AppCompatActivity {
                         if (c2.equals(c2.toUpperCase()) && d2.equals(d2.toUpperCase())) {
                             filho2.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho2.setText(g2);
-                            textToSpeech.speak("Gene Homozigoto Dominate", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak("\n" + " Dominate Homozygous Gene", TextToSpeech.QUEUE_FLUSH, null);
                             ho++;
                         } else if (c2.equals(c2.toLowerCase()) && d2.equals(d2.toUpperCase()) || c2.equals(c2.toUpperCase()) && d2.equals(d2.toLowerCase())) {
                             filho2.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho2.setText(g2);
-                            textToSpeech.speak("Gene Heterozigoto Dominate", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak("\n" + " Dominate Heterozygous Gene", TextToSpeech.QUEUE_FLUSH, null);
                             he++;
                         } else if (c2.equals(c2.toLowerCase()) && d2.equals(d2.toLowerCase())) {
                             filho2.setImageResource(R.drawable.quadrado_preenchido);
                             textViewFilho2.setText(g2);
                             re++;
-                            textToSpeech.speak("Gene Homozigoto Recessivo", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak("\n" + " Recessive Homozygous Gene", TextToSpeech.QUEUE_FLUSH, null);
                         }
                     } else if (x == 5) {
                         c3 = escolha;
@@ -203,18 +204,18 @@ public class activity_solve_and_send_question extends AppCompatActivity {
                         if (c3.equals(c3.toUpperCase()) && d3.equals(d3.toUpperCase())) {
                             filho3.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho3.setText(g3);
-                            textToSpeech.speak("Gene Homozigoto Dominate", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak("\n" + "Dominate Homozygous Gene", TextToSpeech.QUEUE_FLUSH, null);
                             ho++;
                         } else if (c3.equals(c3.toLowerCase()) && d3.equals(d3.toUpperCase()) || c3.equals(c3.toUpperCase()) && d3.equals(d3.toLowerCase())) {
                             filho3.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho3.setText(g3);
-                            textToSpeech.speak("Gene Heterozigoto Dominate", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak("\n" +  "Dominate Heterozygous Gene", TextToSpeech.QUEUE_FLUSH, null);
                             he++;
                         } else if (c3.equals(c3.toLowerCase()) && d3.equals(d3.toLowerCase())) {
                             filho3.setImageResource(R.drawable.quadrado_preenchido);
                             textViewFilho3.setText(g3);
                             re++;
-                            textToSpeech.speak("Gene Homozigoto Recessivo", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak("\n" + "Recessive Homozygous Gene", TextToSpeech.QUEUE_FLUSH, null);
                         }
                     } else if (x == 7) {
                         c4 = escolha;
@@ -224,18 +225,26 @@ public class activity_solve_and_send_question extends AppCompatActivity {
                         if (c4.equals(c4.toUpperCase()) && d4.equals(d4.toUpperCase())) {
                             filho4.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho4.setText(g4);
-                            textToSpeech.speak("Gene Homozigoto Dominate", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak("\n" + " Dominate Homozygous Gene", TextToSpeech.QUEUE_FLUSH, null);
                             ho++;
+
+                            d = c1 + d1 + "," + c2 + d2 + "," + c3 + d3 + "," + c4 + d4;
+                            d = d.trim();
+
                         } else if (c4.equals(c4.toLowerCase()) && d4.equals(d4.toUpperCase()) || c4.equals(c4.toUpperCase()) && d4.equals(d4.toLowerCase())) {
                             filho4.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho4.setText(g4);
-                            textToSpeech.speak("Gene Heterozigoto Dominate", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak("\n" + " Dominate Heterozygous Gene", TextToSpeech.QUEUE_FLUSH, null);
                             he++;
+
+                            d = c1 + d1 + "," + c2 + d2 + "," + c3 + d3 + "," + c4 + d4;
+                            d = d.trim();
+
                         } else if (c4.equals(c4.toLowerCase()) && d4.equals(d4.toLowerCase())) {
                                 filho4.setImageResource(R.drawable.quadrado_preenchido);
                                 textViewFilho4.setText(g4);
                                 re++;
-                                textToSpeech.speak("Gene Homozigoto Recessivo", TextToSpeech.QUEUE_ADD, null);
+                                textToSpeech.speak("\n" + " Recessive Homozygous Gene", TextToSpeech.QUEUE_ADD, null);
 
                                 d = c1 + d1 + "," + c2 + d2 + "," + c3 + d3 + "," + c4 + d4;
                                 d = d.trim();
@@ -250,52 +259,52 @@ public class activity_solve_and_send_question extends AppCompatActivity {
             @Override
             public void onSwipeTopE() {
                 if(x <= 8) {
-                    textToSpeech.speak("Gene " + letra + " Dominate, dê dois toques para confirmar", TextToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak("Gene " + letra +  " Dominant, double tap to confirm", TextToSpeech.QUEUE_FLUSH, null);
                     /** Cruzamento feito pelo User**/
                     escolha = letra.toUpperCase();
-                    escolhafala = letra + " dominante";
+                    escolhafala = letra + " Dominant";
                 } else {
                     escolhafala = "";
-                    textToSpeech.speak("Para enviar a resposta clique e segure na tela, para retornar ao menu faça um L ao contrário", TextToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak("To send a reply click and hold on the screen, to return to the menu do an L in reverse", TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
 
             @Override
             public void onSwipeBottomE() {
                 if(x <= 8) {
-                    textToSpeech.speak("Gene " + letra + " Dominate, dê dois toques para confirmar", TextToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak("Gene " + letra +  " Dominant, double tap to confirm", TextToSpeech.QUEUE_FLUSH, null);
                     /** Cruzamento feito pelo User**/
                     escolha = letra.toUpperCase();
-                    escolhafala = letra + " dominante";
+                    escolhafala = letra + " Dominant";
                 }else  {
                     escolhafala = "";
-                    textToSpeech.speak("Para enviar a resposta clique e segure na tela, para retornar ao menu faça um L ao contrário", TextToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak("To send a reply click and hold on the screen, to return to the menu do an L in reverse", TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
 
             @Override
             public void onSwipeTopD() {
                 if(x <= 8) {
-                    textToSpeech.speak("Gene " + letra + " recessivo, dê dois toques para confirmar", TextToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak("Gene " + letra + " \n" + " recessive, double tap to confirm", TextToSpeech.QUEUE_FLUSH, null);
                     /** Informando o Cruzamento a ser feito**/
                     escolha = letra.toLowerCase();
-                    escolhafala = letra + " recessivo";
+                    escolhafala = letra + " recessive";
                 } else  {
                     escolhafala = "";
-                    textToSpeech.speak("Para enviar a resposta clique e segure na tela, para retornar ao menu faça um L ao contrário", TextToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak("To send a reply click and hold on the screen, to return to the menu do an L in reverse", TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
 
             @Override
             public void onSwipeBottomD () {
                 if (x <= 8) {
-                    textToSpeech.speak("Gene " + letra + " recessivo, dê dois toques para confirmar", TextToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak("Gene " + letra + " recessive, double tap to confirm", TextToSpeech.QUEUE_FLUSH, null);
                     /** Informando o Cruzamento a ser feito**/
                     escolha = letra.toLowerCase();
-                    escolhafala = letra + " rescessivo";
+                    escolhafala = letra + " rescessive";
                 } else  {
                     escolhafala = "";
-                    textToSpeech.speak("Para enviar a resposta clique e segure na tela, para retornar ao menu faça um L ao contrário", TextToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak("To send a reply click and hold on the screen, to return to the menu do an L in reverse", TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
         });
@@ -306,20 +315,23 @@ public class activity_solve_and_send_question extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                textToSpeech.speak("A solução foi enviada com sucesso!", TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak("The solution was sent successfully!", TextToSpeech.QUEUE_FLUSH, null);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                textToSpeech.speak("Houve um erro ao submeter a solução, por favor, tente novamente!", TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak("\n" + "There was an error submitting the solution, please try again!", TextToSpeech.QUEUE_FLUSH, null);
             }
         }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
+                String questao_sub = questao;
                 Map<String, String> parametros = new HashMap<String, String>();
                 parametros.put("id_dispositivo", id_dispositivo);
                 parametros.put("n_lei", "1ª Lei");
                 parametros.put("solucao", d);
+                parametros.put("comando", questao_sub);
+                parametros.put("email_cadastro_questao", email);
 
                 return  parametros;
             }

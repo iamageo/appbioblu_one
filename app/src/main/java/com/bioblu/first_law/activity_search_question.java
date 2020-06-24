@@ -1,13 +1,20 @@
 package com.bioblu.first_law;
 
+
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -21,16 +28,23 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.Locale;
 
 public class activity_search_question extends AppCompatActivity {
 
-    public float velocidade;
+    public int velocidade;
     private TextToSpeech textToSpeech;
     private TextView textView_questao;
     public int teste;
     private String [] questao ;
     private String [] letra ;
+    private String [] email;
     int i;
     private int screenWidth;
     private int yx = 0, l1 = 0;
@@ -38,10 +52,32 @@ public class activity_search_question extends AppCompatActivity {
     private int ix = -1;
     TextView[] cursor = new TextView[1];
 
+    private String id_dispositivo;
+    String URL = "";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_question);
+
+        Bundle dados = getIntent().getExtras();
+        velocidade = dados.getInt("velocidade");
+
+        //recupera o id para enviar junto com a resposta
+        id_dispositivo = Settings.Secure.getString(
+                getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+
+        String x = id_dispositivo.trim();
+
+
+        if (isOnline()) {
+        } else {
+            /* direcionar para uma página de erro */
+            Intent i = new Intent(activity_search_question.this, activity_menu.class);
+            startActivity(i);
+        }
+
 
         /* tratamento de erro da api de fala */
         textToSpeech = new TextToSpeech(activity_search_question.this, new TextToSpeech.OnInitListener() {
@@ -49,9 +85,8 @@ public class activity_search_question extends AppCompatActivity {
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
                     textToSpeech.setLanguage(new Locale("en", "US"));
-                    textToSpeech.setSpeechRate(1);
-                    textToSpeech.speak("Você está na tela de busca da primeira lei de mendel, para navegar entre as opções basta dezlizar o dedo na tela"+'\n'
-                            +"caso você tenha um código de questão copiado em seu aparelho, dê dois toques para colar"+'\n'+"para resolver a questão clique e segure na tela", textToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.setSpeechRate(velocidade);
+                    textToSpeech.speak("You are on the search screen for Mendel's first law." + '\n' + "To search for the question, simply swipe down or swipe up the screen after hearing the question command, double-tap to select", textToSpeech.QUEUE_FLUSH, null);
                 }
             }
         });
@@ -59,46 +94,58 @@ public class activity_search_question extends AppCompatActivity {
         textView_questao = findViewById(R.id.textView_questao_search);
 
 
+        RequestQueue queue = Volley.newRequestQueue(this);
 
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest("http://10.219.1.159/api/consulta.php", new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                JSONObject jsonObject = null;
-                teste = response.length();
-                questao = new String[teste];
-                letra = new String[teste];
+        final String url = "http://200.239.66.35/bioblu/consulta.php?codigo=" + x + "";
 
-                try {
-                    for (int i = 0; i < response.length(); i++) {
-                    jsonObject = response.getJSONObject(i);
+        // prepare the Request
+        JsonArrayRequest getRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>()
+                {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        JSONObject jsonObject = null;
 
-                        questao[i] = jsonObject.getString("comando");
-                        letra[i] = jsonObject.getString("letra");
+                        teste = response.length();
+                        questao = new String[teste];
+                        letra = new String[teste];
+                        email = new String[teste];
+
+                        try {
+                            for (int i = 0; i < response.length(); i++) {
+                                jsonObject = response.getJSONObject(i);
+
+                                questao[i] = new String (jsonObject.getString("comando").getBytes("ISO-8859-1"), "UTF-8");
+                                letra[i] = jsonObject.getString("letra");
+                                email[i] = jsonObject.getString("email_usuario");
+                            }
+
+                        } catch (JSONException e) {
+                            Toast.makeText(activity_search_question.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+
                     }
-
-                    } catch (JSONException e) {
-                        Toast.makeText(activity_search_question.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Intent i = new Intent(getApplicationContext(), main_menu.class);
+                        startActivity(i);
+                        finish();
                     }
                 }
-
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(activity_search_question.this, error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }
         );
 
-        RequestQueue requestQueue = Volley.newRequestQueue(activity_search_question.this);
-        requestQueue.add(jsonArrayRequest);
-
-
+        // add it to the RequestQueue
+        queue.add(getRequest);
 
         cursor[0] = textView_questao;
 
-       initTela();
+        initTela();
     }
-
 
     @SuppressLint("ClickableViewAccessibility")
     private void initTela() {
@@ -110,13 +157,13 @@ public class activity_search_question extends AppCompatActivity {
             public void doubleTap() {
                 Intent intent = new Intent(getApplicationContext(), activity_solve_and_send_question.class);
                 if (ii >= 0) {
-                   intent.putExtra("questao", questao[ii]);
-                   intent.putExtra("letra", letra[ii]);
-                   startActivity(intent);
-                   finish();
+                    intent.putExtra("questao", questao[ii]);
+                    intent.putExtra("letra", letra[ii]);
+                    intent.putExtra("email", email[ii]);
+                    startActivity(intent);
+                    finish();
                 }
             }
-
 
             @Override
             public void LGesture() {
@@ -125,24 +172,24 @@ public class activity_search_question extends AppCompatActivity {
                 startActivity(intent);
             }
 
-
-
             @Override
             public void onSwipeTop() {
-                if (ix == 0 & ii > 0) {
-                    yx--;
-                    ii--;
 
-                } else if (ii > 0) {
-                    ii--;
-                    ix--;
-                } else {
-                    ii = 0;
-                    ix = 0;
-                }
+                    if (ix == 0 & ii > 0) {
+                        yx--;
+                        ii--;
 
-                textToSpeech.speak(questao[ii], TextToSpeech.QUEUE_FLUSH, null);
-                textView_questao.setText(questao[ii]);
+                    } else if (ii > 0) {
+                        ii--;
+                        ix--;
+                    } else {
+                        ii = 0;
+                        ix = 0;
+                    }
+
+                    textToSpeech.speak("Question " + ii + ":" + questao[ii], TextToSpeech.QUEUE_FLUSH, null);
+                    textView_questao.setText(questao[ii]);
+
             }
 
             @Override
@@ -159,7 +206,7 @@ public class activity_search_question extends AppCompatActivity {
                     ix++;
                 }
                 textView_questao.setText(questao[ii]);
-                textToSpeech.speak(questao[ii], TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak("Question " + ii + ":" + questao[ii], TextToSpeech.QUEUE_FLUSH, null);
 
             }
             @Override
@@ -167,27 +214,16 @@ public class activity_search_question extends AppCompatActivity {
                 textView_questao.setText(String.valueOf(questao[l1 + yx]));
             }
 
-
         });
     }
 
-    @Override
-    protected void onDestroy() {
-        if (textToSpeech != null) {
-            textToSpeech.stop();
-            textToSpeech.shutdown();
-        }
-        super.onDestroy();
-    }
 
-    @Override
-    protected void onPause() {
-        textToSpeech.stop();
-        if (textToSpeech != null) {
-            textToSpeech.stop();
-            textToSpeech.shutdown();
-        }
-        super.onPause();
+    //verificar se possui conexão
+    public boolean isOnline() {
+        ConnectivityManager cm =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 
 
