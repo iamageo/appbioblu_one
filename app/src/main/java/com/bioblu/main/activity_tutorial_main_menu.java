@@ -23,25 +23,21 @@ public class activity_tutorial_main_menu extends AppCompatActivity {
     private int i = -1;
     private int ix = -1;
     private TextView lista1, lista2, lista3, lista4, lista5;
-    private String[] opcao = {"To navigate between options, swipe up or down",
-            "To confirm a chosen move or option, double-tap simultaneously",
-            "To return to the previous screen, perform the movement of L in reverse",
-            "To request help on the issue resolution screen, press and hold anywhere on the screen for 2 seconds",
-            "To stop the audio, bring your hand in front of your smartphone screen"};
-
+    private String[] opcao;
     TextView[] cursor = new TextView[5];
-
     private TextToSpeech textToSpeech; /** Sintetiza a fala do texto para reprodução imediata ou para criar um arquivo de som **/
     public int screenWidth;
     public int screenHeight;
     public int velocidade;
     public ImageView imageViewTutorial;
 
-    /**String com informações de como usar o app**/
-    private String primeirafala = "You are in the "+ '\n' +" environment screen here you learn how to use the navigation mechanisms within the" + '\n' + " application to return to the previous menu, just make an L in reverse at any time " + '\n' +
-            "to begin, you must use the application menus." + '\n' +
-           "is very simple, just slide your finger anywhere on the screen and wait for the audio to return from the option where you find it." + '\n' +
-            "let's do it." + '\n' + "slide your finger anywhere on the screen";
+    String tutorial_1;
+    String tutorial_2;
+    String tutorial_3;
+    String tutorial_4;
+    String tutorial_5;
+    String tutorial_6;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +45,20 @@ public class activity_tutorial_main_menu extends AppCompatActivity {
         setContentView(R.layout.activity_tutorial_main_menu);
         Bundle dados = getIntent().getExtras();
         velocidade = dados.getInt("velocidade");
+
+        tutorial_1 = getString(R.string.tutorial_1);
+        tutorial_2 = getString(R.string.tutorial_2);
+        tutorial_3 = getString(R.string.tutorial_3);
+        tutorial_4 = getString(R.string.tutorial_4);
+        tutorial_5 = getString(R.string.tutorial_5);
+        tutorial_6 = getString(R.string.tutorial_6);
+
+        opcao = new String[]{tutorial_2,
+                tutorial_3,
+                tutorial_4,
+                tutorial_5,
+                tutorial_6};
+
 
         lista1 = findViewById(R.id.textView_option1);
         lista2 = findViewById(R.id.textView_option2);
@@ -62,10 +72,10 @@ public class activity_tutorial_main_menu extends AppCompatActivity {
             @Override
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
-                    textToSpeech.setLanguage(new Locale("en", "US"));
+                    textToSpeech.setLanguage(Locale.getDefault());
                     textToSpeech.setSpeechRate(velocidade);
                     textToSpeech.setPitch(1);
-                    textToSpeech.speak(primeirafala, textToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak(tutorial_1, textToSpeech.QUEUE_FLUSH, null);
                 }
             }
         });

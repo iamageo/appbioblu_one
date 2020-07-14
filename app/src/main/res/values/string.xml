@@ -2,9 +2,31 @@
     <string name="app_name">BIOBLU - BIOLOGY TEACHER FOR BLIND USERS</string>
 
     //string da classe main
-    <string name="main_menu_1">Training Screen</string>
-    <string name="main_menu_2">Mendels 1st Law</string>
-    <string name="main_menu_3">Configuration</string>
-    <string name="main_menu_4">Review Concepts</string>
+    <string name="main_menu_1">TRAINING SCREEN</string>
+    <string name="main_menu_2">MENDEL´1S 1ST LAW</string>
+    <string name="main_menu_3">CONFIGURATION</string>
+    <string name="main_menu_4">REVIEW CONCEPTS</string>
+    <string name="main_menu_5">Welcome to BIOBLU you are on the main menu. To navigate through options swipe up or down. A double tap allows you to choose an option.</string>
+    <string name="main_menu_6">If you want to close the BIOBLU App Press and hold on the screen for two seconds. If you don\'t want to close, slide up or down to continue browsing!</string>
+    <string name="main_menu_7">"Wrong Move"</string>
+
+    //string da classe voice rate
+    <string name="congifuracao_0">CONFIGURATION</string>
+    <string name="congifuracao_1">This is the Voice Speed Choice Menu. In it you will have 3 options to choose, You can navigate through the slide up or down after hearing the chosen option, make a double-tap to proceed.</string>
+    <string name="congifuracao_2">Voice speed 1</string>
+    <string name="congifuracao_3">Voice speed 2</string>
+    <string name="congifuracao_4">Voice speed 3</string>
+
+    //string tutorial main menu
+    <string name="tutorial_1">You are in the environment screen here you learn how to use the navigation mechanisms within the application to return to the previous menu, just make an L in reverse at any time to begin, you must use the application menus. is very simple, just slide your finger anywhere on the screen and wait for the audio to return from the option where you find it. let\'s do it. slide your finger anywhere on the screen</string>
+    <string name="tutorial_2">To navigate between options, swipe up or down</string>
+    <string name="tutorial_3">To confirm a chosen move or option, double-tap simultaneously</string>
+    <string name="tutorial_4">To return to the previous screen, perform the movement of L in reverse</string>
+    <string name="tutorial_5">To request help on the issue resolution screen, press and hold anywhere on the screen for 2 seconds</string>
+    <string name="tutorial_6">To stop the audio, bring your hand in front of your smartphone screen</string>
+
+
+
+
 
 </resources>

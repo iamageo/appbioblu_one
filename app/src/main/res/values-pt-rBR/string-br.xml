@@ -2,10 +2,30 @@
     <string name="app_name">BIOBLU - BIOLOGY TEACHER FOR BLIND USERS</string>
 
     //string da classe main
-    <string name="main_menu_1">Tela de Treinamento</string>
-    <string name="main_menu_2">Mendels 1st Law</string>
-    <string name="main_menu_3">Configuration</string>
-    <string name="main_menu_4">Review Concepts</string>
+    <string name="main_menu_1">AMBIENTAÇÃO</string>
+    <string name="main_menu_2">PRIMEIRA LEI DE MENDEL</string>
+    <string name="main_menu_3">CONFIGURAÇÃO</string>
+    <string name="main_menu_4">REVER CONCEITOS</string>
+    <string name="main_menu_5">Bem-vindo ao BIOBLU você está no menu principal. Para navegar nas opções, deslize para cima ou para baixo. Dois toques simultâneos permite escolher uma opção</string>
+    <string name="main_menu_6">Se você deseja sair do Aplicativo BIOBLU Pressione e segure na tela por dois segundos, Se não deseja sair deslize para cima ou para baixo para continuar a navegar!</string>
+    <string name="main_menu_7">"Movimento errado"</string>
+
+    //string da classe voice rate
+    <string name="congifuracao_0">CONFIGURAÇÃO</string>
+    <string name="congifuracao_1">Esse é o Menu de Escolha de velocidade da voz  Nele você terá 3 opções de escolhas, que você pode navegar através do deslize para cima ou para baixo após ouvir a opção escolhida, dê dois toques para prosseguir</string>
+    <string name="congifuracao_2">Velocidade de voz 1</string>
+    <string name="congifuracao_3">Velocidade de voz 2</string>
+    <string name="congifuracao_4">Velocidade de voz 3</string>
+
+    //string tutorial main menu
+    <string name="tutorial_1">Você está na tela da ambientação. aqui e aprenderá como usar os mecanismos de navegação no aplicativo, para retornar ao menu anterior, basta fazer um L inverso a qualquer momento.
+            para começar, você deve usar os menus do aplicativo. é muito simples, basta deslizar o dedo em qualquer lugar da tela e aguardar o retorno do áudio da opção em que você o encontra. vamos fazer isso. deslize seu dedo em qualquer lugar da tela</string>
+    <string name="tutorial_2">Para navegar entre as opções, deslize para cima ou para baixo</string>
+    <string name="tutorial_3">Para confirmar um movimento ou opção escolhida, toque duas vezes simultaneamente</string>
+    <string name="tutorial_4">Para retornar à tela anterior, execute o movimento de L no sentido inverso</string>
+    <string name="tutorial_5">Para solicitar ajuda na tela de resolução de problemas, pressione e segure em qualquer lugar na tela por 2 segundos</string>
+    <string name="tutorial_6">Para interromper o áudio, coloque sua mão na frente da tela do smartphone</string>
+
 
 
 

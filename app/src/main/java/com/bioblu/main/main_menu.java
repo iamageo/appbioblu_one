@@ -42,6 +42,9 @@ public class main_menu extends AppCompatActivity {
     String main_menu_2;
     String main_menu_3;
     String main_menu_4;
+    String main_menu_5;
+    String main_menu_6;
+    String main_menu_7;
 
     private TextView lista1, lista2, lista3, lista4;
     private String[] opcao;
@@ -58,10 +61,13 @@ public class main_menu extends AppCompatActivity {
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 
-        String main_menu_1 = getString(R.string.main_menu_1);
-        String main_menu_2 = getString(R.string.main_menu_2);
-        String main_menu_3 = getString(R.string.main_menu_3);
-        String main_menu_4 = getString(R.string.main_menu_4);
+        main_menu_1 = getString(R.string.main_menu_1);
+        main_menu_2 = getString(R.string.main_menu_2);
+        main_menu_3 = getString(R.string.main_menu_3);
+        main_menu_4 = getString(R.string.main_menu_4);
+        main_menu_5 = getString(R.string.main_menu_5);
+        main_menu_6 = getString(R.string.main_menu_6);
+        main_menu_7 = getString(R.string.main_menu_7);
 
         opcao = new String[] {main_menu_1, main_menu_2, main_menu_3, main_menu_4};
 
@@ -83,7 +89,7 @@ public class main_menu extends AppCompatActivity {
                     TTS.setLanguage(Locale.getDefault());
                     TTS.setSpeechRate(velocidade);
                     TTS.setPitch(1);
-                    TTS.speak("Welcome to BIOBLU you are on the main menu. To navigate through options swipe up or down. A double tap allows you to choose an option.", TextToSpeech.QUEUE_FLUSH, null);
+                    TTS.speak(main_menu_5, TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
         });
@@ -94,7 +100,6 @@ public class main_menu extends AppCompatActivity {
                 if(sensorEvent.values[0] < proximitySensor.getMaximumRange()){
                     TTS.speak("", TextToSpeech.QUEUE_FLUSH, null);
                 }
-
             }
 
             @Override
@@ -130,37 +135,40 @@ public class main_menu extends AppCompatActivity {
                 sair = false;
                 if (i >= 0) {
                     switch (opcao[i]) {
-                        case "Training Screen": {
+                        case "TRAINING SCREEN":
+                        case "AMBIENTAÇÃO": {
                             finish();
                             Intent intent = new Intent(getApplicationContext(), activity_tutorial_main_menu.class);
                             intent.putExtra("velocidade", velocidade);
                             startActivity(intent);
                             break;
                         }
-                        case "Mendel's 1st Law": {
+                        case "MENDEL'S 1ST LAW":
+                        case "PRIMEIRA LEI DE MENDEL": {
                             finish();
                             Intent intent = new Intent(getApplicationContext(), activity_menu.class);
                             intent.putExtra("velocidade", velocidade);
                             startActivity(intent);
                             break;
                         }
-                        case "Configuration": {
+                        case "CONFIGURATION":
+                        case "CONFIGURAÇÃO": {
                             finish();
                             Intent intent = new Intent(getApplicationContext(), activity_voiceRate.class);
                             intent.putExtra("velocidade", velocidade);
                             startActivity(intent);
                             break;
                         }
-                        case "Review Concepts": {
+                        case "REVIEW CONCEPTS":
+                        case "REVER CONCEITOS": {
                             finish();
                             Intent intent = new Intent(getApplicationContext(), activity_selectConceitos.class);
                             intent.putExtra("velocidade", velocidade);
                             startActivity(intent);
                             break;
                         }
-                        default:
-                            System.out.println("Wrong Move");
-                            break;
+
+
                     }
                 }
             }
@@ -217,7 +225,7 @@ public class main_menu extends AppCompatActivity {
 
 
             public void LGesture() {
-                TTS.speak("If you want to close the BIOBLU App Press and hold on the screen for two seconds. If you don't want to close, slide up or down to continue browsing!", TextToSpeech.QUEUE_FLUSH, null);
+                TTS.speak(main_menu_6, TextToSpeech.QUEUE_FLUSH, null);
                 sair = true;
 
             }
@@ -229,7 +237,7 @@ public class main_menu extends AppCompatActivity {
             }
 
             public void wrong(){
-                TTS.speak("Wrong Move", TextToSpeech.QUEUE_FLUSH, null);
+                TTS.speak(main_menu_7, TextToSpeech.QUEUE_FLUSH, null);
             }
         });
     }

@@ -33,7 +33,14 @@ public class activity_voiceRate extends AppCompatActivity {
     private int ix = -1;
     private int fx = -1;
     private TextView lista1, lista2, lista3, textView_imei;
-    private String[] opcao = {"Voice speed 1", "Voice speed 2", "Voice speed 3"};
+
+    private String[] opcao;
+
+    String configuracao_1;
+    String configuracao_2;
+    String configuracao_3;
+    String configuracao_4;
+
     TextView[] cursor = new TextView[6];
     public static String FILE_NAME = "voiceRate.txt";
     public int velocidade;
@@ -42,11 +49,18 @@ public class activity_voiceRate extends AppCompatActivity {
     private SensorEventListener proximitySensorListener;
     private String android_id;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voice_rate);
+
+        configuracao_1 = getString(R.string.congifuracao_1);
+        configuracao_2 = getString(R.string.congifuracao_2);
+        configuracao_3 = getString(R.string.congifuracao_3);
+        configuracao_4 = getString(R.string.congifuracao_4);
+
+        opcao = new String[]{configuracao_2, configuracao_3, configuracao_4};
+
 
          android_id = Secure.getString(
                 getApplicationContext().getContentResolver(), Secure.ANDROID_ID);
@@ -56,10 +70,10 @@ public class activity_voiceRate extends AppCompatActivity {
             @Override
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
-                    TTS.setLanguage(new Locale("en", "US"));
+                    TTS.setLanguage(Locale.getDefault());
                     TTS.setSpeechRate(velocidade);
                     TTS.setPitch(1);
-                    TTS.speak("This is the Voice Speed Choice Menu. In it you will have 3 options to choose, You can navigate through the slide up or down after hearing the chosen option, make a double-tap to proceed. ", TextToSpeech.QUEUE_FLUSH, null);
+                    TTS.speak(configuracao_1, TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
         });
@@ -123,7 +137,8 @@ public class activity_voiceRate extends AppCompatActivity {
             public void doubleTap() {
                 if (i >= 0) {
                     switch (opcao[i]) {
-                        case "Voice speed 1": {
+                        case "Voice speed 1":
+                        case "Velocidade de voz 1": {
                             salvar_velocidade("1");
                             Intent intent = new Intent(getApplicationContext(), main_menu.class);
                             intent.putExtra("velocidade", velocidade);
@@ -131,7 +146,8 @@ public class activity_voiceRate extends AppCompatActivity {
                             finish();
                             break;
                         }
-                        case "Voice speed 2": {
+                        case "Voice speed 2":
+                        case "Velocidade de voz 2": {
                             salvar_velocidade("2");
                             Intent intent = new Intent(getApplicationContext(), main_menu.class);
                             intent.putExtra("velocidade", velocidade);
@@ -139,7 +155,8 @@ public class activity_voiceRate extends AppCompatActivity {
                             finish();
                             break;
                         }
-                        case "Voice speed 3": {
+                        case "Voice speed 3":
+                        case "Velocidade de voz 3": {
                             salvar_velocidade("4");
                             Intent intent = new Intent(getApplicationContext(), main_menu.class);
                             intent.putExtra("velocidade", velocidade);

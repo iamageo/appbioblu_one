@@ -78,25 +78,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="TRAINING SCREEN"
+        android:text="@string/main_menu_1"
         android:textColor="@color/cor_texto"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
         app:layout_constraintTop_toTopOf="@+id/guideline51"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintVertical_bias="0.51" />
 
     <TextView
         android:id="@+id/listaQ2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MENDEL'S 1ST LAW"
+        android:text="@string/main_menu_2"
         android:textColor="@color/cor_texto"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline76"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:layout_constraintVertical_bias="0.437" />
+        app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
     <TextView
         android:id="@+id/listaQ4"
@@ -104,13 +103,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:text="CONFIGURATION"
+        android:text="@string/main_menu_3"
         android:textColor="@color/cor_texto"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/imageView11"
-        app:layout_constraintTop_toTopOf="@+id/guideline76"
-        app:layout_constraintVertical_bias="0.531" />
+        app:layout_constraintTop_toTopOf="@+id/guideline76" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline39"
@@ -139,7 +137,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="Software Development Laboratory/Postgraduate Program in Applied Computing/Federal University of Pará (UFPA-CAMTUC)"
+        android:text="@string/ppca"
         android:textColor="@color/cor_texto"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -160,19 +158,18 @@
         android:id="@+id/listaQ5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REVIEW CONCEPTS"
+        android:text="@string/main_menu_4"
         android:textColor="@color/cor_texto"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline52"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toTopOf="@+id/guideline39"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintTop_toTopOf="@+id/guideline39" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BIOBLU"
+        android:text="@string/bioblu"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline53"
