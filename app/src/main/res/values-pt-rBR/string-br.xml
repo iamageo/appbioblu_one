@@ -48,6 +48,23 @@
 
 
 
+    //string da classe cruzamento
+    <string name="cruzamento_1">Agora, que está na Tela de cruzamento. Dê 4 toques para informar ao Aplicativo. Qual Cruzamento você irá fazer. Após isso, Deslise 8 vezes, Para fazer o cruzamento que você informou acima</string>
+    <string name="cruzamento_2">Gene confimado</string>
+    <string name="cruzamento_3">Gene </string>
+    <string name="cruzamento_4">Homozigoto Dominante Selecionado</string>
+    <string name="cruzamento_5">Heterozigoto Dominante Selecionado</string>
+    <string name="cruzamento_6">Homozigoto Recessivo Selecionado</string>
+    <string name="cruzamento_7">Você acertou!!! Continue.</string>
+    <string name="cruzamento_8">Os Genes gerados através do Cruzamentos foram</string>
+    <string name="cruzamento_9">Porcento Homozigoto Dominante e</string>
+    <string name="cruzamento_10">Porcento Heterozigoto Dominante e</string>
+    <string name="cruzamento_11">Porcento Homozigoto Dominante</string>
+    <string name="cruzamento_12">Porcento Heterozigoto Dominante</string>
+    <string name="cruzamento_13">Porcento Homozigoto Recessivo</string>
+    <string name="cruzamento_14">Dominante</string>
+    <string name="cruzamento_15">Recessivo</string>
+
 
 
 </resources>
