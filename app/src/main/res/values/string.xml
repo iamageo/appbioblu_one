@@ -53,6 +53,23 @@
     <string name="conceito_25">Monohybridisme, this term refers to Mendel\'s first law, and applies to hybrid individuals, considering only one characteristic.</string>
     <string name="conceito_0">REVIEW CONCEPTS</string>
 
+    //string da classe cruzamento
+    <string name="cruzamento_1">Now you are in the crossing screen. Make 4 taps to inform the Application which crossing you will make. After that, swipe 8 times to make the crossing you informed above</string>
+    <string name="cruzamento_2">Gene confirmed</string>
+    <string name="cruzamento_3">Gene </string>
+    <string name="cruzamento_4">Homozygous Dominant Selected</string>
+    <string name="cruzamento_5">Heterozygous Dominant Selected</string>
+    <string name="cruzamento_6">Homozygous Recessive Selected</string>
+    <string name="cruzamento_7">You got it right !!! Continue.</string>
+    <string name="cruzamento_8">The Genes generated through the Crossings were</string>
+    <string name="cruzamento_9">Homozygote Dominant Percent and</string>
+    <string name="cruzamento_10">Heterozygous Dominant Percent and</string>
+    <string name="cruzamento_11">Homozygous Dominant Percent</string>
+    <string name="cruzamento_12">Heterozygous Dominant Percent</string>
+    <string name="cruzamento_13">Homozygote Recessive Percent</string>
+    <string name="cruzamento_14">Dominant</string>
+    <string name="cruzamento_15">Recessive</string>
+
 
 
 

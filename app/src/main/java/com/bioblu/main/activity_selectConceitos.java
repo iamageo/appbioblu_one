@@ -31,7 +31,7 @@ public class activity_selectConceitos extends AppCompatActivity {
 
     public int screenWidth;
     int y;
-    private TextToSpeech textToSpeech; /** Sintetiza a fala do texto para reprodução imediata ou para criar um arquivo de som **/
+    private TextToSpeech textToSpeech;
     private int yx = 0, l1 = 0, l2 = 1, l3 = 2, l4 = 3, l5 = 4, l6 = 5, l7 = 6, l8 = 7 , l9 = 8, l10 = 9, l11 = 10, l12 = 11;
     private int i = -1;
     private int ix = -1;
