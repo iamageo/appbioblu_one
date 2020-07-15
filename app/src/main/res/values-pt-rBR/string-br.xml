@@ -26,33 +26,27 @@
     <string name="tutorial_5">Para solicitar ajuda na tela de resolução de problemas, pressione e segure em qualquer lugar na tela por 2 segundos</string>
     <string name="tutorial_6">Para interromper o áudio, coloque sua mão na frente da tela do smartphone</string>
 
-    //string conceitos
-    <string name="conceito_1">Gene</string>
-    <string name="conceito_2">Genótipo</string>
-    <string name="conceito_3">Fenótipo</string>
-    <string name="conceito_4">Heterozigoto</string>
-    <string name="conceito_5">Homozigoto</string>
-    <string name="conceito_6">Dominante</string>
-    <string name="conceito_7">Recessivo</string>
-    <string name="conceito_8">Codominância</string>
-    <string name="conceito_9">Alelo</string>
-    <string name="conceito_10">Gametas</string>
-    <string name="conceito_11">Diibridismo</string>
-    <string name="conceito_12">Monoibridismo</string>
-    <string name="conceito_13">"Você está na tela de conceitos para navegar entre eles basta deslizar para cima ou para baixo para retornar ao menu, faça um L ao contrário em qualquer parte da tela</string>
-    <string name="conceito_14">Gene, São Sequências específicas de nucleotídeos no DNA que constituem a unidade fundamental da hereditariedade</string>
-    <string name="conceito_15">Genótipo, Conjunto de genes do indivíduo.</string>
-    <string name="conceito_16">Fenótipo, Conjunto de características físicas e fisiológicas do indivíduo que é resultado da expressão do genótipo e da ação do ambiente.</string>
-    <string name="conceito_17">Heterozigoto, Quando o indivíduo apresenta dois alelos diferentes de um mesmo gene</string>
-    <string name="conceito_18">Homozigoto, Quando o indivíduo apresenta dois alelos iguais de um mesmo gene</string>
-    <string name="conceito_19">Dominante, O alelo expressa-se em condição homozigótica e em condição heterozigótica</string>
-    <string name="conceito_20">Recessivo, O alelo somente se expressa em homozigose, portanto, não apresenta efeito fenotípico quando em heterozigose</string>
-    <string name="conceito_21">Codominância, Situação em que se observa a expressão dos fenótipos de ambos os alelos quando se apresentam em heterozigose</string>
-    <string name="conceito_22">Alelo, forma alternativa de um gene que afeta a mesma característica de forma diferente.</string>
-    <string name="conceito_23">Gametas, são células responsáveis pela reprodução sexuada Hereditariedade: transmissão de características dos pais para seus descendentes.</string>
-    <string name="conceito_24">Diibridismo, esse termo faz referência a segunda lei de Mendel , onde as diferenças de uma característica são herdadas independentemente das diferenças de outra característica</string>
-    <string name="conceito_25">Monoibridismo, esse termo faz referência a primeira lei de Mendel, e se aplica a indivíduos híbridos , considerando apenas uma característica</string>
-    <string name="conceito_0">REVER CONCEITOS</string>
+
+    //string da classe cruzamento
+    <string name="cruzamento_1">Agora, que está na Tela de cruzamento. Dê 4 toques para informar ao Aplicativo. Qual Cruzamento você irá fazer. Após isso, Deslise 8 vezes, Para fazer o cruzamento que você informou acima</string>
+    <string name="cruzamento_2">Gene confimado</string>
+    <string name="cruzamento_3">Gene </string>
+    <string name="cruzamento_4">Homozigoto Dominante Selecionado</string>
+    <string name="cruzamento_5">Heterozigoto Dominante Selecionado</string>
+    <string name="cruzamento_6">Homozigoto Recessivo Selecionado</string>
+    <string name="cruzamento_7">Você acertou!!! Continue.</string>
+    <string name="cruzamento_8">Os Genes gerados através do Cruzamentos foram</string>
+    <string name="cruzamento_9">Porcento Homozigoto Dominante e</string>
+    <string name="cruzamento_10">Porcento Heterozigoto Dominante e</string>
+    <string name="cruzamento_11">Porcento Homozigoto Dominante</string>
+    <string name="cruzamento_12">Porcento Heterozigoto Dominante</string>
+    <string name="cruzamento_13">Porcento Homozigoto Recessivo</string>
+    <string name="cruzamento_14">Dominante</string>
+    <string name="cruzamento_15">Recessivo</string>
+
+
+
+
 
 
 

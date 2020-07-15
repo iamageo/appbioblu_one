@@ -36,7 +36,7 @@ public class activity_cruzamento extends AppCompatActivity {
     public String homozigotoD = dominate+dominate;
     public String hetorozigotoD = dominate+recessivo;
     public String homozigotoR = recessivo+recessivo;
-    private String d, c, x1, x2, x3, x4, d1, c1, d2, c2, d3, c3, d4, c4,z1,z2,z3,z4;
+    private String d, c, x1, x2, x3, x4, d1, c1, d2, c2, d3, c3, d4, c4;
     char a1, a2, b1, b2;
     int y;
     private TextToSpeech textToSpeech;
@@ -44,6 +44,22 @@ public class activity_cruzamento extends AppCompatActivity {
     private SensorManager sensorManager;
     private Sensor proximitySensor;
     private SensorEventListener proximitySensorListener;
+    private String cruzamento_1;
+    private String cruzamento_2;
+    private String cruzamento_3;
+    private String cruzamento_4;
+    private String cruzamento_5;
+    private String cruzamento_6;
+    private String cruzamento_7;
+    private String cruzamento_8;
+    private String cruzamento_9;
+    private String cruzamento_10;
+    private String cruzamento_11;
+    private String cruzamento_12;
+    private String cruzamento_13;
+    private String cruzamento_14;
+    private String cruzamento_15;
+
 
 
     @Override
@@ -69,16 +85,31 @@ public class activity_cruzamento extends AppCompatActivity {
         filho3 = findViewById(R.id.imageViewF3_cruzamento1law);
         filho4 = findViewById(R.id.imageViewF4_cruzamento1law);
 
+        cruzamento_1 = getString(R.string.cruzamento_1);
+        cruzamento_2 = getString(R.string.cruzamento_2);
+        cruzamento_3 = getString(R.string.cruzamento_3);
+        cruzamento_4 = getString(R.string.cruzamento_4);
+        cruzamento_5 = getString(R.string.cruzamento_5);
+        cruzamento_6 = getString(R.string.cruzamento_6);
+        cruzamento_7 = getString(R.string.cruzamento_7);
+        cruzamento_8 = getString(R.string.cruzamento_8);
+        cruzamento_9 = getString(R.string.cruzamento_9);
+        cruzamento_10 = getString(R.string.cruzamento_10);
+        cruzamento_11 = getString(R.string.cruzamento_11);
+        cruzamento_12 = getString(R.string.cruzamento_12);
+        cruzamento_13 = getString(R.string.cruzamento_13);
+        cruzamento_14 = getString(R.string.cruzamento_14);
+        cruzamento_15 = getString(R.string.cruzamento_15);
+
         /* tratamento de erro da api de fala */
         textToSpeech = new TextToSpeech(activity_cruzamento.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
                     ler_velocidade();
-                    textToSpeech.setLanguage(new Locale("en", "US"));
+                    textToSpeech.setLanguage(Locale.getDefault());
                     textToSpeech.setSpeechRate(velocidade);
-                    textToSpeech.speak("Now you are in the crossing screen. Make 4 taps to inform the Application which crossing you will make." +
-                            "After that, swipe 8 times to make the crossing you informed above.", TextToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak(cruzamento_1, TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
         });
@@ -141,7 +172,7 @@ public class activity_cruzamento extends AppCompatActivity {
 
             @Override
             public void doubleTap() {
-                textToSpeech.speak("\n" + "Gene confirmed "+escolhafala, TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak(cruzamento_2 +" "+ escolhafala, TextToSpeech.QUEUE_FLUSH, null);
                 if (x >= 1 && escolha != null) {
                     if (x == 1) {
                         a1 = escolha.charAt(0);
@@ -151,15 +182,15 @@ public class activity_cruzamento extends AppCompatActivity {
                             meuImageView1.getDrawable();
                             meuImageView1.setImageResource(R.drawable.quadrado_normal);
                             textView1.setText(homozigotoD);
-                            textToSpeech.speak("Gene " + letra + " Homozygous  Dominant Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_4, TextToSpeech.QUEUE_FLUSH, null);
                         } else if (((a1 == recessivo.charAt(0)) && (a2 == dominate.charAt(0))) || ((a1 == dominate.charAt(0)) && (a2 == recessivo.charAt(0)))) {
                             meuImageView1.setImageResource(R.drawable.quadrado_normal);
                             textView1.setText(hetorozigotoD);
-                            textToSpeech.speak("Gene " + letra + " Heterozygous Dominant Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_5, TextToSpeech.QUEUE_FLUSH, null);
                         } else if ((a1 == recessivo.charAt(0)) && (a2 == recessivo.charAt(0))) {
                             meuImageView1.setImageResource(R.drawable.quadrado_preenchido);
                             textView1.setText(homozigotoR);
-                            textToSpeech.speak("Gene " + letra + " Homozygous  Recessive Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_6, TextToSpeech.QUEUE_FLUSH, null);
                         }
                     } else if (x == 3) {
                         b1 = escolha.charAt(0);
@@ -168,15 +199,15 @@ public class activity_cruzamento extends AppCompatActivity {
                         if ((b1 == dominate.charAt(0)) && (b2 == dominate.charAt(0))) {
                             meuImageView2.setImageResource(R.drawable.quadrado_normal);
                             textView2.setText(homozigotoD);
-                            textToSpeech.speak("Gene " + letra + " Homozygous  Dominant Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_4, TextToSpeech.QUEUE_FLUSH, null);
                         } else if (((b1 == recessivo.charAt(0)) && (b2 == dominate.charAt(0))) || ((b1 == dominate.charAt(0)) && (b2 == recessivo.charAt(0)))) {
                             meuImageView2.setImageResource(R.drawable.quadrado_normal);
                             textView2.setText(hetorozigotoD);
-                            textToSpeech.speak("Gene " + letra + " Heterozygous Dominant Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_5, TextToSpeech.QUEUE_FLUSH, null);
                         } else if ((b1 == recessivo.charAt(0)) && (b2 == recessivo.charAt(0))) {
                             meuImageView2.setImageResource(R.drawable.quadrado_preenchido);
                             textView2.setText(homozigotoR);
-                            textToSpeech.speak("Gene " + letra + " Homozygous  Recessive Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_6, TextToSpeech.QUEUE_FLUSH, null);
                         }
                         /** Checando Se a letra maiuscula está na frente no X1**/
                         if (Character.isUpperCase(a1)) {
@@ -220,85 +251,81 @@ public class activity_cruzamento extends AppCompatActivity {
                         c1 = escolha;
                     } else if (x == 6) {
                         d1 = escolha;
-                        z1 = c1 + d1;
                         if (c1.equals(dominate) && d1.equals(dominate)) {
                             filho1.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho1.setText(homozigotoD);
-                            textToSpeech.speak("Gene " + letra + " Homozygous  Dominant Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_4, TextToSpeech.QUEUE_FLUSH, null);
                             ho++;
                         } else if (c1.equals(recessivo) && d1.equals(dominate) || c1.equals(dominate) && d1.equals(recessivo)) {
                             filho1.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho1.setText(hetorozigotoD);
-                            textToSpeech.speak("Gene " + letra + " Heterozygous Dominant Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_5, TextToSpeech.QUEUE_FLUSH, null);
                             he++;
                         } else if (c1.equals(recessivo) && d1.equals(recessivo)) {
                             filho1.setImageResource(R.drawable.quadrado_preenchido);
                             textViewFilho1.setText(homozigotoR);
-                            textToSpeech.speak("Gene " + letra + " Homozygous  Recessive Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_6, TextToSpeech.QUEUE_FLUSH, null);
                             re++;
                         }
                     } else if (x == 7) {
                         c2 = escolha;
                     } else if (x == 8) {
                         d2 = escolha;
-                        z2 = c2 + d2;
                         if (c2.equals(dominate) && d2.equals(dominate)) {
                             filho2.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho2.setText(homozigotoD);
-                            textToSpeech.speak("Gene " + letra + " Homozygous  Dominant Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_4, TextToSpeech.QUEUE_FLUSH, null);
                             ho++;
                         } else if (c2.equals(recessivo) && d2.equals(dominate) || c2.equals(dominate) && d2.equals(recessivo)) {
                             filho2.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho2.setText(hetorozigotoD);
-                            textToSpeech.speak("Gene " + letra + " Heterozygous Dominant Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_5, TextToSpeech.QUEUE_FLUSH, null);
                             he++;
                         } else if (c2.equals(recessivo) && d2.equals(recessivo)) {
                             filho2.setImageResource(R.drawable.quadrado_preenchido);
                             textViewFilho2.setText(homozigotoR);
-                            textToSpeech.speak("Gene " + letra + " Homozygous  Recessive Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_6, TextToSpeech.QUEUE_FLUSH, null);
                             re++;
                         }
                     } else if (x == 9) {
                         c3 = escolha;
                     } else if (x == 10) {
                         d3 = escolha;
-                        z3 = c3 + d3;
                         if (c3.equals(dominate) && d3.equals(dominate)) {
                             filho3.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho3.setText(homozigotoD);
-                            textToSpeech.speak("Gene " + letra + " Homozygous  Dominant Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_4, TextToSpeech.QUEUE_FLUSH, null);
                             ho++;
                         } else if (c3.equals(recessivo) && d3.equals(dominate) || c3.equals(dominate) && d3.equals(recessivo)) {
                             filho3.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho3.setText(hetorozigotoD);
-                            textToSpeech.speak("Gene " + letra + " Heterozygous Dominant Selected", TextToSpeech.QUEUE_FLUSH, null);
-                            textToSpeech.speak("Você acertou!!! Continue.", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_5, TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_7, TextToSpeech.QUEUE_FLUSH, null);
                             he++;
                         } else if (c3.equals(recessivo) && d3.equals(recessivo)) {
                             filho3.setImageResource(R.drawable.quadrado_preenchido);
                             textViewFilho3.setText(homozigotoR);
-                            textToSpeech.speak("Gene " + letra + " Homozygous  Recessive Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_6, TextToSpeech.QUEUE_FLUSH, null);
                             re++;
                         }
                     } else if (x == 11) {
                         c4 = escolha;
                     } else if (x == 12) {
                         d4 = escolha;
-                        z4 = c4 + d4;
                         if (c4.equals(dominate) && d4.equals(dominate)) {
                             filho4.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho4.setText(homozigotoD);
-                            textToSpeech.speak("Gene " + letra + " Homozygous  Dominant Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_4, TextToSpeech.QUEUE_FLUSH, null);
                             ho++;
                         } else if (c4.equals(recessivo) && d4.equals(dominate) || c4.equals(dominate) && d4.equals(recessivo)) {
                             filho4.setImageResource(R.drawable.quadrado_normal);
                             textViewFilho4.setText(hetorozigotoD);
-                            textToSpeech.speak("Gene " + letra + " Heterozygous Dominant Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_5, TextToSpeech.QUEUE_FLUSH, null);
                             he++;
                         } else if (c4.equals(recessivo) && d4.equals(recessivo)) {
                             filho4.setImageResource(R.drawable.quadrado_preenchido);
                             textViewFilho4.setText(homozigotoR);
-                            textToSpeech.speak("Gene " + letra + " Homozygous  Recessive Selected", TextToSpeech.QUEUE_FLUSH, null);
+                            textToSpeech.speak(cruzamento_3 +" "+ letra +" "+ cruzamento_6, TextToSpeech.QUEUE_FLUSH, null);
                             re++;
                         }
                         d = c1 + d1 + "," + c2 + d2 + "," + c3 + d3 + "," + c4 + d4;
@@ -311,25 +338,25 @@ public class activity_cruzamento extends AppCompatActivity {
                         reces = (int) re;
 
                         if (homoD > 0 & heteD > 0 & reces > 0) {
-                            textToSpeech.speak("The Genes generated through the Crossings were," + homoD + "Percent Homozygote Dominant and," + heteD + "Percent Heterozygote Dominant, and" + reces + "Percent Homozygote Recessive.", TextToSpeech.QUEUE_ADD, null);
+                            textToSpeech.speak(cruzamento_8+", "+ homoD +" "+cruzamento_9+" "+ heteD +" "+cruzamento_10+" "+ reces +" "+cruzamento_13, TextToSpeech.QUEUE_ADD, null);
 
                         } else if (homoD > 0 & heteD > 0) {
-                            textToSpeech.speak("The Genes generated through the Crossings were," + homoD + "Percent Homozygous Dominant and," + heteD + "Percent Heterozygous Dominant", TextToSpeech.QUEUE_ADD, null);
+                            textToSpeech.speak(cruzamento_8+", "+ homoD +" "+cruzamento_9+" "+ heteD +" "+cruzamento_12, TextToSpeech.QUEUE_ADD, null);
 
                         } else if (homoD > 0 & reces > 0) {
-                            textToSpeech.speak("The Genes generated through the Crossings were," + homoD + "Percent Homozygous Dominant and" + reces + "Percent Homozygote Recessive", TextToSpeech.QUEUE_ADD, null);
+                            textToSpeech.speak(cruzamento_8+", "+ homoD +" "+cruzamento_9+" "+ reces +" "+cruzamento_13, TextToSpeech.QUEUE_ADD, null);
 
                         } else if (heteD > 0 & reces > 0) {
-                            textToSpeech.speak("The Genes generated through the Crossings were," + heteD + "Heterozygous Percent Dominant and," + reces + "Recessive Homozygous Percent", TextToSpeech.QUEUE_ADD, null);
+                            textToSpeech.speak(cruzamento_8+", "+ heteD +" "+cruzamento_10+" "+ reces +" "+cruzamento_13, TextToSpeech.QUEUE_ADD, null);
 
                         } else if (homoD > 0) {
-                            textToSpeech.speak("The Genes generated through Crossings were," + homoD + "Percent Homozygous Dominant.", TextToSpeech.QUEUE_ADD, null);
+                            textToSpeech.speak(cruzamento_8+", "+ homoD +" "+cruzamento_11, TextToSpeech.QUEUE_ADD, null);
 
                         } else if (heteD > 0) {
-                            textToSpeech.speak("The Genes generated through Crossings were," + heteD + "Heterozygous Percent Dominant.", TextToSpeech.QUEUE_ADD, null);
+                            textToSpeech.speak(cruzamento_8+", "+heteD +" "+cruzamento_12, TextToSpeech.QUEUE_ADD, null);
 
                         } else if (reces > 0) {
-                            textToSpeech.speak("The Genes generated through the Crossings were," + reces + "Percent Homozygous Recessive.", TextToSpeech.QUEUE_ADD, null);
+                            textToSpeech.speak(cruzamento_8+", "+ reces +" "+cruzamento_13, TextToSpeech.QUEUE_ADD, null);
                         }
                     }
                 }else {
@@ -339,33 +366,33 @@ public class activity_cruzamento extends AppCompatActivity {
 
             @Override
             public void onSwipeTopE() {
-                textToSpeech.speak("Gene, "+ dominate +" Dominate", TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak(cruzamento_3+", "+ dominate +" "+ cruzamento_14, TextToSpeech.QUEUE_FLUSH, null);
                 /** Informando o Cruzamento a ser feito**/
                 escolha = dominate;
-                escolhafala = "A Dominant";
+                escolhafala = dominate+" "+cruzamento_14;
             }
 
             @Override
             public void onSwipeBottomE() {
-                textToSpeech.speak("Gene, "+dominate+" Dominate", TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak(cruzamento_3+", "+dominate+" "+ cruzamento_14, TextToSpeech.QUEUE_FLUSH, null);
                 /** Informando o Cruzamento a ser feito**/
                 escolha = dominate;
-                escolhafala = "A Dominant";
+                escolhafala = dominate+" "+cruzamento_14;
             }
 
             @Override
             public void onSwipeTopD() {
-                textToSpeech.speak("Gene, "+dominate+" Recessivo", TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak(cruzamento_3+", "+dominate+" "+ cruzamento_15, TextToSpeech.QUEUE_FLUSH, null);
                 /** Informando o Cruzamento a ser feito**/
                 escolha = recessivo;
-                escolhafala = "a Recessive";
+                escolhafala = dominate+" "+cruzamento_15;
             }
             @Override
             public void onSwipeBottomD() {
-                textToSpeech.speak("Gene, "+dominate+" Recessivo", TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak(cruzamento_3+", "+dominate+" "+ cruzamento_15, TextToSpeech.QUEUE_FLUSH, null);
                 /** Informando o Cruzamento a ser feito**/
                 escolha = recessivo;
-                escolhafala = "a Recessive";
+                escolhafala = dominate+" "+cruzamento_15;
             }
 
         });
