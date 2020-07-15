@@ -70,6 +70,17 @@
     <string name="cruzamento_14">Dominant</string>
     <string name="cruzamento_15">Recessive</string>
 
+    //string da classe erro
+    <string name="erro_1">BACK TO MENU</string>
+    <string name="erro_2">Sorry, but we could not find any questions with your ID or you are not connected to the internet. To return to the menu, navigate to the option return to the menu and select</string>
+
+
+    //string da classe seleção de letra
+    <string name="selecao_0">CROSSING</string>
+    <string name="selecao_1">You are  at Letter selection screen for the crossing. after choosing the desired option with the swipe up or down, double-tap to select the letter.</string>
+    <string name="selecao_2">A</string>
+    <string name="selecao_3">D</string>
+    <string name="selecao_4">V</string>
 
 
 

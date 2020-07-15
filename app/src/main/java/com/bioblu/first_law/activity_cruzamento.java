@@ -60,8 +60,6 @@ public class activity_cruzamento extends AppCompatActivity {
     private String cruzamento_14;
     private String cruzamento_15;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

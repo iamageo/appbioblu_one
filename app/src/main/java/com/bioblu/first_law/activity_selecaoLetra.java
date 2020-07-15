@@ -33,7 +33,13 @@ public class activity_selecaoLetra extends AppCompatActivity  {
     private int ix = -1;
     private int fx = -1;
     private TextView lista1, lista2, lista3;
-    private String[] opcao = {"A", "D", "V"};
+    private String[] opcao;
+
+    private String selecao_1;
+    private String selecao_2;
+    private String selecao_3;
+    private String selecao_4;
+
     TextView[] cursor = new TextView[6];
     public int velocidade;
     private SensorManager sensorManager;
@@ -41,24 +47,27 @@ public class activity_selecaoLetra extends AppCompatActivity  {
     private SensorEventListener proximitySensorListener;
 
 
-    /**
-     * String com informações de como usar o app
-     **/
-    private String introducao = "Escolha uma Variavel Para ultilizar no cruzamento  ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selecao_letra);
 
+        selecao_1 = getString(R.string.selecao_1);
+        selecao_2 = getString(R.string.selecao_2);
+        selecao_3 = getString(R.string.selecao_3);
+        selecao_4 = getString(R.string.selecao_4);
+
+        opcao = new String [] {"A", "D", "V"};
+
         TTS = new TextToSpeech(activity_selecaoLetra.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
-                    TTS.setLanguage(new Locale("en", "US"));
+                    TTS.setLanguage(Locale.getDefault());
                     TTS.setSpeechRate(velocidade);
                     TTS.setPitch(1);
-                    TTS.speak("You are  at Letter selection screen for the crossing. after choosing the desired option with the swipe up or down, double-tap to select the letter.", TextToSpeech.QUEUE_FLUSH, null);
+                    TTS.speak(selecao_1, TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
         });

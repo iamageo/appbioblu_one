@@ -54,7 +54,6 @@
     <string name="conceito_25">Monoibridismo, esse termo faz referência a primeira lei de Mendel, e se aplica a indivíduos híbridos , considerando apenas uma característica</string>
     <string name="conceito_0">REVER CONCEITOS</string>
 
-
     //string da classe cruzamento
     <string name="cruzamento_1">Agora, que está na Tela de cruzamento. Dê 4 toques para informar ao Aplicativo. Qual Cruzamento você irá fazer. Após isso, Deslise 8 vezes, Para fazer o cruzamento que você informou acima</string>
     <string name="cruzamento_2">Gene confimado</string>
@@ -72,6 +71,16 @@
     <string name="cruzamento_14">Dominante</string>
     <string name="cruzamento_15">Recessivo</string>
 
+    //string da classe erro
+    <string name="erro_1">RETORNAR AO MENU</string>
+    <string name="erro_2">Desculpe, mas não foi possível encontrar nenhuma questão com o seu ID ou você não está conectado à Internet. Para retornar ao menu, navegue até a opção retornar ao menu e selecione</string>
+
+    //string da classe seleção de letra
+    <string name="selecao_0">CRUZAMENTO</string>
+    <string name="selecao_1">Você está na tela de seleção de letras para o cruzamento. depois de escolher a opção desejada com o toque para cima ou para baixo, toque duas vezes para selecionar a letra desejada.</string>
+    <string name="selecao_2">A</string>
+    <string name="selecao_3">D</string>
+    <string name="selecao_4">V</string>
 
 
 </resources>
