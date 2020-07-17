@@ -140,7 +140,6 @@
     <string name="search_question_2">Você está na tela de pesquisa da primeira lei de Mendel. Para procurar as perguntas, deslize o dedo para baixo ou para cima na tela após ouvir o comando de pergunta, toque duas vezes para selecionar</string>
     <string name="search_question_3">Questão</string>
 
-
     //string da classe solve and send
     <string name="solve_and_send_1">Gene confirmado</string>
     <string name="solve_and_send_2"> Homozigoto dominante</string>

@@ -54,7 +54,7 @@ public class activity_SelectQuestao extends AppCompatActivity {
         Bundle dados = getIntent().getExtras();
         velocidade = dados.getInt("velocidade");
 
-        questao_0 = getString(R.string.questao_00);
+        questao_0 = getString(R.string.select_questao_00);
         questao_1 = getString(R.string.questao_1);
         questao_2 = getString(R.string.questao_2);
         questao_3 = getString(R.string.questao_3);
