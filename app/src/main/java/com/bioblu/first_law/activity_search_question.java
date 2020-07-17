@@ -51,6 +51,8 @@ public class activity_search_question extends AppCompatActivity {
     private int ii = -1;
     private int ix = -1;
     TextView[] cursor = new TextView[1];
+    private String search_question_2;
+    private String search_question_3;
 
     private String id_dispositivo;
     String URL = "";
@@ -60,6 +62,8 @@ public class activity_search_question extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_question);
+        search_question_2 = getString(R.string.search_question_2);
+        search_question_3 = getString(R.string.search_question_3);
 
         Bundle dados = getIntent().getExtras();
         velocidade = dados.getInt("velocidade");
@@ -84,9 +88,9 @@ public class activity_search_question extends AppCompatActivity {
             @Override
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
-                    textToSpeech.setLanguage(new Locale("en", "US"));
+                    textToSpeech.setLanguage(Locale.getDefault());
                     textToSpeech.setSpeechRate(velocidade);
-                    textToSpeech.speak("You are on the search screen for Mendel's first law." + '\n' + "To search for the question, simply swipe down or swipe up the screen after hearing the question command, double-tap to select", textToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak(search_question_2, textToSpeech.QUEUE_FLUSH, null);
                 }
             }
         });
@@ -187,7 +191,7 @@ public class activity_search_question extends AppCompatActivity {
                         ix = 0;
                     }
 
-                    textToSpeech.speak("Question " + ii + ":" + questao[ii], TextToSpeech.QUEUE_FLUSH, null);
+                    textToSpeech.speak(search_question_3 +" "+ ii + ":" + questao[ii], TextToSpeech.QUEUE_FLUSH, null);
                     textView_questao.setText(questao[ii]);
 
             }
@@ -206,7 +210,7 @@ public class activity_search_question extends AppCompatActivity {
                     ix++;
                 }
                 textView_questao.setText(questao[ii]);
-                textToSpeech.speak("Question " + ii + ":" + questao[ii], TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak(search_question_3 +" " + ii + ":" + questao[ii], TextToSpeech.QUEUE_FLUSH, null);
 
             }
             @Override

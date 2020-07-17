@@ -134,6 +134,23 @@
     <string name="questao_28">Dominante</string>
     <string name="questao_29">Recessivo</string>
 
+    //string da Serch question
+    <string name="search_question_1">SEARCH QUESTIONS</string>
+    <string name="search_question_2">You are on the search screen for Mendels first law. To search for the questions , simple swipe down or swipe up the screen after hearing the question command, double-tap to select</string>
+    <string name="search_question_3">QUESTIONS</string>
 
+    //string da classe solve and send
+    <string name="solve_and_send_1">Gene confirmed</string>
+    <string name="solve_and_send_2">Dominate Homozygous Gene</string>
+    <string name="solve_and_send_3"> Dominate Heterozygous Gene</string>
+    <string name="solve_and_send_4"> Recessive Homozygous Gene</string>
+    <string name="solve_and_send_5">Gene </string>
+    <string name="solve_and_send_6">Dominant, double tap to confirm</string>
+    <string name="solve_and_send_7">Dominant</string>
+    <string name="solve_and_send_8">To send a reply click and hold on the screen, to return to the menu do an L in reverse</string>
+    <string name="solve_and_send_9"> recessive, double tap to confirm</string>
+    <string name="solve_and_send_10"> recessive</string>
+    <string name="solve_and_send_11">The solution was sent successfully!</string>
+    <string name="solve_and_send_12">There was an error submitting the solution, please try again!</string>
 
 </resources>

@@ -135,6 +135,25 @@
     <string name="questao_28">Dominant</string>
     <string name="questao_29">Recessive</string>
 
+    //string da Serch question
+    <string name="search_question_1">Procurar Questão</string>
+    <string name="search_question_2">Você está na tela de pesquisa da primeira lei de Mendel. Para procurar as perguntas, deslize o dedo para baixo ou para cima na tela após ouvir o comando de pergunta, toque duas vezes para selecionar</string>
+    <string name="search_question_3">Questão</string>
+
+
+    //string da classe solve and send
+    <string name="solve_and_send_1">Gene confirmado</string>
+    <string name="solve_and_send_2"> Homozigoto dominante</string>
+    <string name="solve_and_send_3"> Heterozigoto dominante</string>
+    <string name="solve_and_send_4"> Heterozigoto recessivo</string>
+    <string name="solve_and_send_5">Gene </string>
+    <string name="solve_and_send_6">Dominante, dê dois toques para confirmar</string>
+    <string name="solve_and_send_7">Dominante</string>
+    <string name="solve_and_send_8">Para enviar a resposta, clique e segure na tela, para retornar ao menu, faça um L na ordem inversa</string>
+    <string name="solve_and_send_9"> recessivo, dê dois toques para confirmar</string>
+    <string name="solve_and_send_10"> recessivo</string>
+    <string name="solve_and_send_11">A solução foi submetida com sucesso!</string>
+    <string name="solve_and_send_12">Ocorreu um erro ao enviar a solução, tente novamente!</string>
 
 
 </resources>

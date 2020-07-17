@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:text="SEARCH QUESTIONS"
+        android:text="@string/search_question_1"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline77"
         app:layout_constraintEnd_toEndOf="parent"
