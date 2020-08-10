@@ -228,7 +228,7 @@ public class main_menu extends AppCompatActivity {
                 if (i == opcao.length - 1) {
                     i = opcao.length - 1;
 
-                } else if (ix == 4 & i <= opcao.length) {
+                } else if (ix == 6 & i <= opcao.length) {
                     yx++;
                     i++;
                     caminhar();
