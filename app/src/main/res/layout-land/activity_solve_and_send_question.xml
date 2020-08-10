@@ -5,18 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fundo"
-    tools:context="com.bioblu.first_law.activity_solve_and_send_question">
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout_solve_and_send_question"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </RelativeLayout>
+    tools:context=".first_law.activity_solve_and_send_question">
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline64"
@@ -62,8 +51,8 @@
 
     <TextView
         android:id="@+id/textView_questao1law"
-        android:layout_width="693dp"
-        android:layout_height="129dp"
+        android:layout_width="359dp"
+        android:layout_height="217dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="20dp"
@@ -73,10 +62,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline69"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.083" />
+        app:layout_constraintVertical_bias="0.151" />
 
     <ImageView
         android:id="@+id/imageViewF1_questao1law"
@@ -164,5 +153,16 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline69"
         app:layout_constraintEnd_toStartOf="@+id/guideline68"
         app:layout_constraintStart_toStartOf="@+id/guideline67" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_solve_and_send_question"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

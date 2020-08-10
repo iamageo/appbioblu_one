@@ -1,4 +1,8 @@
-package com.bioblu.main;
+package com.bioblu.second_law;
+import com.bioblu.R;
+import static com.bioblu.main.activity_voiceRate.FILE_NAME;
+import com.bioblu.controllers.OuvinteTelaTutorial;
+import com.bioblu.main.main_menu;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -15,11 +19,6 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bioblu.R;
-import com.bioblu.controllers.OuvinteTelaTutorial;
-import com.bioblu.first_law.activity_menu;
-import com.bioblu.second_law.activity_menu_2law;
-import com.bioblu.second_law.activity_select_gene_coelho;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -28,67 +27,45 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Locale;
 
-import static com.bioblu.main.activity_voiceRate.FILE_NAME;
 
-public class main_menu extends AppCompatActivity {
+public class activity_menu_2law extends AppCompatActivity {
 
     public int screenWidth;
     public int y;
     private TextToSpeech TTS;
-    private int yx = 0, l1 = 0, l2 = 1, l3 = 2, l4 =3, l5=4, l6=5;
+    private int yx = 0, l1 = 0, l2 = 1, l3 = 2, l4 = 3;
     private int i = -1;
     private int ix = -1;
     private int fx = -1;
-
-    String main_menu_1;
-    String main_menu_2;
-    String main_menu_3;
-    String main_menu_4;
-    String main_menu_5;
-    String main_menu_6;
-    String main_menu_7;
-    String main_menu_8;
-    String main_menu_9;
-
-    private TextView lista1, lista2, lista3, lista4, lista5, lista6;
+    private TextView lista1, lista2, lista3, lista4;
     private String[] opcao;
-    TextView[] cursor = new TextView[6];
+    TextView[] cursor = new TextView[4];
     public int velocidade;
     private SensorManager sensorManager;
     private Sensor proximitySensor;
     private SensorEventListener proximitySensorListener;
 
+    String menu1;
+    String menu2;
+    String menu3;
+    String menu4;
+    String menu5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu);
-        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        setContentView(R.layout.activity_menu_2law);
 
-        main_menu_1 = getString(R.string.main_menu_1);
-        main_menu_2 = getString(R.string.main_menu_2);
-        main_menu_3 = getString(R.string.main_menu_3);
-        main_menu_4 = getString(R.string.main_menu_4);
-        main_menu_5 = getString(R.string.main_menu_5);
-        main_menu_6 = getString(R.string.main_menu_6);
-        main_menu_7 = getString(R.string.main_menu_7);
-        main_menu_8 = getString(R.string.main_menu_8);
-        main_menu_9 = getString(R.string.main_menu_9);
+        menu1 = getString(R.string.menu_2lei_1);
+        menu2 = getString(R.string.menu_2lei_2);
+        menu3 = getString(R.string.menu_2lei_3);
+        menu4 = getString(R.string.menu_2lei_4);
+        menu5 = getString(R.string.menu_2lei_5);
 
-
-        opcao = new String[] {main_menu_1, main_menu_2,main_menu_8, main_menu_9, main_menu_3, main_menu_4};
-
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
-
-        //if (proximitySensor == null) {
-          //  Toast.makeText(this,"Proximity sensor is not avalible !", Toast.LENGTH_LONG).show();
-            //finish();
-        //}
+        opcao = new String[] {menu1, menu2, menu3,  menu4};
 
         /* tratamento de erro da api de fala */
-        TTS = new TextToSpeech(main_menu.this, new TextToSpeech.OnInitListener() {
+        TTS = new TextToSpeech(activity_menu_2law.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 ler_velocidade();
@@ -96,10 +73,17 @@ public class main_menu extends AppCompatActivity {
                     TTS.setLanguage(Locale.getDefault());
                     TTS.setSpeechRate(velocidade);
                     TTS.setPitch(1);
-                    TTS.speak(main_menu_5, TextToSpeech.QUEUE_FLUSH, null);
+                    TTS.speak(menu5, TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
         });
+
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
 
         proximitySensorListener = new SensorEventListener() {
             @Override
@@ -107,6 +91,7 @@ public class main_menu extends AppCompatActivity {
                 if(sensorEvent.values[0] < proximitySensor.getMaximumRange()){
                     TTS.speak("", TextToSpeech.QUEUE_FLUSH, null);
                 }
+
             }
 
             @Override
@@ -115,97 +100,83 @@ public class main_menu extends AppCompatActivity {
             }
         };
 
+
         sensorManager.registerListener(proximitySensorListener, proximitySensor, 2* 1000* 1000);
 
+
         //Pega o Tamanho da tela do Celular Para a Classe OuvinteDeToque
+
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         screenWidth = displayMetrics.widthPixels;
         lista1 = findViewById(R.id.listaQ1);
         lista2 = findViewById(R.id.listaQ2);
         lista3 = findViewById(R.id.listaQ3);
-        lista4 = findViewById(R.id.listaQ4);
-        lista5 = findViewById(R.id.listaQ5);
-        lista6 = findViewById(R.id.listaQ6);
+        lista4 = findViewById(R.id.listaQ4_buscar2law);
 
         cursor[0] = lista1;
         cursor[1] = lista2;
         cursor[2] = lista3;
         cursor[3] = lista4;
-        cursor[4] = lista5;
-        cursor[5] = lista6;
+
         initTela();
     }
 
     @SuppressLint("ClickableViewAccessibility")
     private void initTela() {
-        RelativeLayout Relativelayout = findViewById(R.id.relativeLayoutMenu);
+        RelativeLayout Relativelayout = findViewById(R.id.relativeLayoutconceito);
 
         Relativelayout.setOnTouchListener(new OuvinteTelaTutorial(getApplicationContext(), screenWidth) {
             @Override
+            public void LGesture() {
+                finish();
+                Intent intent = new Intent(getApplicationContext(), main_menu.class);
+                startActivity(intent);
+            }
+
+            @Override
             public void doubleTap() {
-                sair = false;
                 if (i >= 0) {
                     switch (opcao[i]) {
-                        case "TRAINING SCREEN":
-                        case "AMBIENTAÇÃO": {
+                        case "TUTORIAL":
+                        case "TRAINING SCREEN": {
                             finish();
-                            Intent intent = new Intent(getApplicationContext(), activity_tutorial_main_menu.class);
-                            intent.putExtra("velocidade", velocidade);
+                            Intent intent = new Intent(getApplicationContext(), activity_tutorial_2law.class);
                             startActivity(intent);
                             break;
                         }
-                        case "MENDEL'S 1ST LAW":
-                        case "PRIMEIRA LEI DE MENDEL": {
+                        case "CRUZAMENTO":
+                        case "CROSSING": {
                             finish();
-                            Intent intent = new Intent(getApplicationContext(), activity_menu.class);
-                            intent.putExtra("velocidade", velocidade);
+                            Intent intent = new Intent(getApplicationContext(), activity_selectLetra2law.class);
                             startActivity(intent);
                             break;
                         }
-                        case "MENDEL'S 2ST LAW":
-                        case "SEGUNDA LEI DE MENDEL": {
+                        case "QUESTÕES":
+                        case "QUESTIONS": {
                             finish();
-                            Intent intent = new Intent(getApplicationContext(), activity_menu_2law.class);
-                            intent.putExtra("velocidade", velocidade);
-                            startActivity(intent);
-                            break;
-                        }
-                        case "MULTIPLE ALELLES":
-                        case "ALELOS MÚLTIPLOS": {
-                            finish();
-                            Intent intent = new Intent(getApplicationContext(), activity_select_gene_coelho.class);
-                            intent.putExtra("velocidade", velocidade);
+                            Intent intent = new Intent(getApplicationContext(),  activity_select_questao_2law.class);
                             startActivity(intent);
                             break;
                         }
 
-
-                        case "CONFIGURATION":
-                        case "CONFIGURAÇÃO": {
+                        case "BUSCAR QUESTÕES":
+                        case "SEARCH QUESTIONS":{
                             finish();
-                            Intent intent = new Intent(getApplicationContext(), activity_voiceRate.class);
-                            intent.putExtra("velocidade", velocidade);
-                            startActivity(intent);
-                            break;
-                        }
-                        case "REVIEW CONCEPTS":
-                        case "REVER CONCEITOS": {
-                            finish();
-                            Intent intent = new Intent(getApplicationContext(), activity_selectConceitos.class);
-                            intent.putExtra("velocidade", velocidade);
+                            Intent intent = new Intent(getApplicationContext(), activity_search_question_2law.class);
                             startActivity(intent);
                             break;
                         }
 
-
+                        default:
+                            System.out.println("Erro");
+                            break;
                     }
                 }
             }
 
             @Override
             public void onSwipeTop() {
-                sair = false;
                 if (ix == 0 & i > 0) {
                     yx--;
                     i--;
@@ -224,7 +195,6 @@ public class main_menu extends AppCompatActivity {
 
             @Override
             public void onSwipeBottom() {
-                sair = false;
                 if (i == opcao.length - 1) {
                     i = opcao.length - 1;
 
@@ -251,26 +221,10 @@ public class main_menu extends AppCompatActivity {
                 lista2.setText(String.valueOf(opcao[l2 + yx]));
                 lista3.setText(String.valueOf(opcao[l3 + yx]));
                 lista4.setText(String.valueOf(opcao[l4 + yx]));
-                lista5.setText(String.valueOf(opcao[l5 + yx]));
-                lista6.setText(String.valueOf(opcao[l6 + yx]));
-            }
 
-
-            public void LGesture() {
-                TTS.speak(main_menu_6, TextToSpeech.QUEUE_FLUSH, null);
-                sair = true;
 
             }
 
-            public void onLongPressTutorial(){
-                if(sair){
-                    finish();
-                }
-            }
-
-            public void wrong(){
-                TTS.speak(main_menu_7, TextToSpeech.QUEUE_FLUSH, null);
-            }
         });
     }
 
@@ -318,8 +272,6 @@ public class main_menu extends AppCompatActivity {
                 }
             }
         }
-
     }
-
 
 }

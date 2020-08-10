@@ -5,57 +5,85 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundo_new"
-    tools:context="com.bioblu.first_law.activity_menu">
+    tools:context=".second_law.activity_menu_2law">
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="49dp"
-        android:layout_height="59dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline60"
-        app:layout_constraintEnd_toStartOf="@+id/guideline28"
-        app:layout_constraintStart_toStartOf="@+id/guideline29"
-        app:layout_constraintTop_toTopOf="@+id/guideline10"
-        app:srcCompat="@drawable/ic_list_bulleted" />
+    <RelativeLayout
+        android:id="@+id/relativeLayoutconceito"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="49dp"
-        android:layout_height="59dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
-        app:layout_constraintEnd_toStartOf="@+id/guideline28"
-        app:layout_constraintStart_toStartOf="@+id/guideline29"
-        app:layout_constraintTop_toTopOf="@+id/guideline8"
-        app:srcCompat="@drawable/ic_device" />
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="49dp"
         android:layout_height="59dp"
+        android:contentDescription="@string/ic_training1"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toStartOf="@+id/guideline28"
         app:layout_constraintStart_toStartOf="@+id/guideline29"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        app:layout_constraintTop_toTopOf="@+id/guideline46"
         app:srcCompat="@drawable/ic_overscan" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline9"
+    <TextView
+        android:id="@+id/listaQ3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.13" />
+        android:text="@string/menu_2lei_3"
+        android:textColor="@color/cor_texto"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline39"
+        app:layout_constraintStart_toStartOf="@+id/guideline28"
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
-    <RelativeLayout
-        android:id="@+id/relativeLayoutMenu1law"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+    <TextView
+        android:id="@+id/listaQ2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_2lei_2"
+        android:textColor="@color/cor_texto"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="@+id/guideline28"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/listaQ1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/menu_2lei_1"
+        android:textColor="@color/cor_texto"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline28"
+        app:layout_constraintTop_toTopOf="@+id/guideline46" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="49dp"
+        android:layout_height="59dp"
+        android:contentDescription="@string/ic_share"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintEnd_toStartOf="@+id/guideline28"
+        app:layout_constraintStart_toStartOf="@+id/guideline29"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:srcCompat="@drawable/ic_device" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="49dp"
+        android:layout_height="59dp"
+        android:contentDescription="@string/ic_questions"
+        app:layout_constraintBottom_toTopOf="@+id/guideline39"
+        app:layout_constraintEnd_toStartOf="@+id/listaQ3"
+        app:layout_constraintStart_toStartOf="@+id/guideline29"
+        app:layout_constraintTop_toTopOf="@+id/guideline10"
+        app:srcCompat="@drawable/ic_list_bulleted" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline28"
@@ -69,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2919708" />
+        app:layout_constraintGuide_percent="0.29" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline10"
@@ -85,51 +113,25 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.06" />
 
-    <TextView
-        android:id="@+id/listaQ1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/menu_1"
-        android:textColor="@color/cor_texto"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toTopOf="@+id/guideline9" />
-
-    <TextView
-        android:id="@+id/listaQ2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/menu_2"
-        android:textColor="@color/cor_texto"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
-        app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toTopOf="@+id/guideline8" />
-
-    <TextView
-        android:id="@+id/listaQ3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/menu_3"
-        android:textColor="@color/cor_texto"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline60"
-        app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toTopOf="@+id/guideline10" />
-
     <android.support.constraint.Guideline
-        android:id="@+id/guideline60"
+        android:id="@+id/guideline39"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.63" />
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+
     <ImageView
-        android:id="@+id/imageView24"
+        android:id="@+id/imageView32"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:contentDescription="@string/logo"
         app:layout_constraintBottom_toTopOf="@+id/guideline46"
         app:layout_constraintEnd_toStartOf="@+id/guideline28"
         app:layout_constraintStart_toStartOf="@+id/guideline29"
@@ -137,8 +139,8 @@
         app:srcCompat="@drawable/logo_bioblue" />
 
     <TextView
-        android:id="@+id/textView7"
-        android:layout_width="0dp"
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bioblu"
         android:textSize="24sp"
@@ -148,38 +150,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/guideline46"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.13" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline81"
+        android:id="@+id/guideline76"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.79" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/imageView34"
         android:layout_width="49dp"
         android:layout_height="59dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline81"
+        android:contentDescription="@string/ic_review"
+        app:layout_constraintBottom_toTopOf="@+id/guideline76"
         app:layout_constraintEnd_toStartOf="@+id/guideline28"
         app:layout_constraintStart_toStartOf="@+id/guideline29"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/guideline39"
         app:srcCompat="@drawable/ic_search" />
 
     <TextView
-        android:id="@+id/listaQ4"
+        android:id="@+id/listaQ4_buscar2law"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/menu_4"
+        android:text="@string/menu_2lei_4"
         android:textColor="@color/cor_texto"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline81"
+        app:layout_constraintBottom_toTopOf="@+id/guideline76"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toTopOf="@+id/guideline60" />
+        app:layout_constraintTop_toTopOf="@+id/guideline39" />
 
 </android.support.constraint.ConstraintLayout>

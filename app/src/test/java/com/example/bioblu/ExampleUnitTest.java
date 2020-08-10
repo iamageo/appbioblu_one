@@ -1,4 +1,4 @@
-package com.example.mendelone;
+package com.example.bioblu;
 
 import org.junit.Test;
 
