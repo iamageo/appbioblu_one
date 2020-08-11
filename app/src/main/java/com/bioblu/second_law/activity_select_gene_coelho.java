@@ -27,8 +27,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Locale;
 
-
-
 public class activity_select_gene_coelho extends AppCompatActivity {
     public String escolha_gene;
     public String [] genes = new String[4];
