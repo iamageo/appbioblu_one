@@ -197,7 +197,36 @@
     <string name="menu_2lei_4">BUSCAR QUESTÕES</string>
     <string name="menu_2lei_5">Você está no módulo da 2ª lei de mendel. você pode navegar entre as opções através do deslize para cima ou para baixo, após ouvir a opção escolhida, dê dois toques para prosseguir.</string>
 
+    //string menu polialelia
+    <string name="polialelia1">POLIALELIA</string>
+    <string name="polialelia2">TUTORIAL</string>
+    <string name="polialelia3">CRUZAMENTO</string>
+    <string name="polialelia4">Você está no modulo da polialelia, você pode escolher a opção desejada deslizando o dedo na tela.</string>
 
+    //string select gene polialelia
+    <string name="select_polialelia1">CRUZAMENTO</string>
+    <string name="select_polialelia2">C</string>
+    <string name="select_polialelia3">Ch</string>
+    <string name="select_polialelia4">Cch</string>
+    <string name="select_polialelia5">Ca</string>
+    <string name="select_polialelia8">Dominância: C> Cch> Ch> Ca</string>
+    <string name="select_polialelia9">Genótipo</string>
+    <string name="select_polialelia10">CC, C Cch, C Ch e C Ca</string>
+    <string name="select_polialelia11">CchCch, CchCh e CchCa</string>
+    <string name="select_polialelia12">ChCh e Ch Ca</string>
+    <string name="select_polialelia13">CaCa</string>
+    <string name="select_polialelia14">Febótipo</string>
+    <string name="select_polialelia15">Selvagem ou Aguti</string>
+    <string name="select_polialelia16">Chinchila</string>
+    <string name="select_polialelia17">Himalaia</string>
+    <string name="select_polialelia18">Albino</string>
 
+    <string name="select_polialelia19">Selvagem</string>
+    <string name="select_polialelia20">Chinchila</string>
+    <string name="select_polialelia21">Himalaia</string>
+    <string name="select_polialelia22">Albino</string>
+
+    <string name="select_polialelia23">você está na tela de escolha de genes da polialelia. você deve selecionar 4 alelos, onde os dois primeiros serão referentes ao primeiro coelho, e os dois últimos ao segundo coelho. após isso você será redirecionado para tela de cruzamento</string>
+    <string name="select_polialelia24">Confirmado gene </string>
 
 </resources>

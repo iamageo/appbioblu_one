@@ -29,6 +29,8 @@
         <activity android:name=".second_law.activity_selectLetra2law"/>
         <activity android:name=".second_law.activity_tutorial_2law"/>
         <activity android:name=".second_law.activity_select_questao_2law"/>
+        <activity android:name=".second_law.activity_menu_polialelia"/>
+        <activity android:name=".second_law.activity_tutorial_polialelia"/>
 
         <activity android:name=".first_law.activity_erro"></activity>
         <activity android:name=".first_law.activity_solve_and_send_question" />

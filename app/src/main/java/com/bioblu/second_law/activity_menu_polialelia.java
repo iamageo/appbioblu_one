@@ -12,9 +12,9 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -28,52 +28,40 @@ import java.io.InputStreamReader;
 import java.util.Locale;
 
 
-
-public class activity_select_gene_coelho extends AppCompatActivity {
-    public String escolha_gene;
-    public String [] genes = new String[4];
-    public String gene_selecionado_fala;
+public class activity_menu_polialelia extends AppCompatActivity  {
 
     public int screenWidth;
     public int y;
     private TextToSpeech TTS;
-    private int yx = 0, l1 = 0, l2 = 1, l3 = 2, l5 = 3;
+    private int yx = 0, l1 = 0, l2 = 1;
     private int i = -1;
     private int ix = -1;
     private int fx = -1;
-    private TextView lista1, lista2, lista3, lista4;
+    private TextView lista1, lista2;
     private String[] opcao;
-    TextView[] cursor = new TextView[5];
+    TextView[] cursor = new TextView[4];
     public int velocidade;
     private SensorManager sensorManager;
     private Sensor proximitySensor;
     private SensorEventListener proximitySensorListener;
 
-    String select_1;
-    String select_2;
-    String select_3;
-    String select_4;
-    String select_5;
-    String select_6;
+    String poli1;
+    String poli2;
+    String poli3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_gene_coelho);
+        setContentView(R.layout.activity_menu_polialelia);
 
-        select_1= getString(R.string.select_polialelia19);
-        select_2 = getString(R.string.select_polialelia20);
-        select_3 = getString(R.string.select_polialelia21);
-        select_4 = getString(R.string.select_polialelia22);
-        select_5 = getString(R.string.select_polialelia23);
-        select_6 = getString(R.string.select_polialelia24);
+        poli1 = getString(R.string.polialelia2);
+        poli2 = getString(R.string.polialelia3);
+        poli3 = getString(R.string.polialelia4);
 
-
-        opcao = new String[] {select_1, select_2, select_3,select_4};
-
+        opcao = new String[] {poli1, poli2};
 
         /* tratamento de erro da api de fala */
-        TTS = new TextToSpeech(activity_select_gene_coelho.this, new TextToSpeech.OnInitListener() {
+        TTS = new TextToSpeech(activity_menu_polialelia.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 ler_velocidade();
@@ -81,10 +69,11 @@ public class activity_select_gene_coelho extends AppCompatActivity {
                     TTS.setLanguage(Locale.getDefault());
                     TTS.setSpeechRate(velocidade);
                     TTS.setPitch(1);
-                    TTS.speak(select_5, TextToSpeech.QUEUE_FLUSH, null);
+                    TTS.speak(poli3, TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
         });
+
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
@@ -111,27 +100,25 @@ public class activity_select_gene_coelho extends AppCompatActivity {
 
         sensorManager.registerListener(proximitySensorListener, proximitySensor, 2* 1000* 1000);
 
-
         //Pega o Tamanho da tela do Celular Para a Classe OuvinteDeToque
+
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         screenWidth = displayMetrics.widthPixels;
-        lista1 = findViewById(R.id.lista_coelho1);
-        lista2 = findViewById(R.id.lista_coelho2);
-        lista3 = findViewById(R.id.lista_coelho3);
-        lista4 = findViewById(R.id.lista_coelho4);
+        lista1 = findViewById(R.id.lista_polialelia_id_1);
+        lista2 = findViewById(R.id.lista_polialelia_id_2);
+
 
         cursor[0] = lista1;
         cursor[1] = lista2;
-        cursor[2] = lista3;
-        cursor[3] = lista4;
+
 
         initTela();
     }
 
     @SuppressLint("ClickableViewAccessibility")
     private void initTela() {
-        RelativeLayout Relativelayout = findViewById(R.id.relativeLayout_select_gene_coelho);
+        RelativeLayout Relativelayout = findViewById(R.id.relativeLayout_polialelia);
 
         Relativelayout.setOnTouchListener(new OuvinteTelaTutorial(getApplicationContext(), screenWidth) {
             @Override
@@ -143,27 +130,29 @@ public class activity_select_gene_coelho extends AppCompatActivity {
 
             @Override
             public void doubleTap() {
-                Intent intent = new Intent(getApplicationContext(), activity_cruzamento_coelho.class);
-                if (x == 1) {
-                    TTS.speak(select_6 + gene_selecionado_fala, TextToSpeech.QUEUE_FLUSH, null);
-                    genes[0] = escolha_gene;
-                } else if (x == 2) {
-                    TTS.speak(select_6 + gene_selecionado_fala, TextToSpeech.QUEUE_FLUSH, null);
-                    genes[1] = escolha_gene;
-                } else if (x == 3) {
-                    TTS.speak(select_6 + gene_selecionado_fala, TextToSpeech.QUEUE_FLUSH, null);
-                    genes[2] = escolha_gene;
-                } else if (x == 4) {
-                    TTS.speak(select_6 + gene_selecionado_fala, TextToSpeech.QUEUE_FLUSH, null);
-                    genes[3] = escolha_gene;
-                    intent.putExtra("genes_escolhido1", genes[0]);
-                    intent.putExtra("genes_escolhido2", genes[1]);
-                    intent.putExtra("genes_escolhido3", genes[2]);
-                    intent.putExtra("genes_escolhido4", genes[3]);
-                    finish();
-                    startActivity(intent);
+                if (i >= 0) {
+                    switch (opcao[i]) {
+                        case "TUTORIAL":
+                        case "TRAINING SCREEN": {
+                            finish();
+                            Intent intent = new Intent(getApplicationContext(), activity_tutorial_polialelia.class);
+                            intent.putExtra("velocidade", velocidade);
+                            startActivity(intent);
+                            break;
+                        }
+                        case "CRUZAMENTO":
+                        case "CROSSING": {
+                            finish();
+                            Intent intent = new Intent(getApplicationContext(), activity_select_gene_coelho.class);
+                            intent.putExtra("velocidade", velocidade);
+                            startActivity(intent);
+                            break;
+                        }
+                        default:
+                            System.out.println("Erro");
+                            break;
+                    }
                 }
-
             }
 
             @Override
@@ -182,9 +171,6 @@ public class activity_select_gene_coelho extends AppCompatActivity {
                 cursor[ix].setBackgroundResource(R.drawable.linha_horizontal);
                 cursor[ix + 1].setBackgroundColor(Color.TRANSPARENT);
                 TTS.speak(opcao[i], TextToSpeech.QUEUE_FLUSH, null);
-
-                escolha_gene = opcao[i];
-                gene_selecionado_fala = opcao[i];
             }
 
             @Override
@@ -192,7 +178,7 @@ public class activity_select_gene_coelho extends AppCompatActivity {
                 if (i == opcao.length - 1) {
                     i = opcao.length - 1;
 
-                } else if (ix == 4 & i <= opcao.length) {
+                } else if (ix == 2 & i <= opcao.length) {
                     yx++;
                     i++;
                     caminhar();
@@ -207,17 +193,12 @@ public class activity_select_gene_coelho extends AppCompatActivity {
                 if (ix > 0) {
                     cursor[ix - 1].setBackgroundColor(Color.TRANSPARENT);
                 }
-
-                escolha_gene = opcao[i];
-                gene_selecionado_fala = opcao[i];
             }
 
             @Override
             public void caminhar() {
                 lista1.setText(String.valueOf(opcao[l1 + yx]));
                 lista2.setText(String.valueOf(opcao[l2 + yx]));
-                lista3.setText(String.valueOf(opcao[l3 + yx]));
-                lista4.setText(String.valueOf(opcao[l5 + yx]));
 
             }
 
@@ -235,7 +216,6 @@ public class activity_select_gene_coelho extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-        sensorManager.unregisterListener(proximitySensorListener);
         TTS.stop();
         if (TTS != null) {
             TTS.stop();
@@ -268,6 +248,7 @@ public class activity_select_gene_coelho extends AppCompatActivity {
                 }
             }
         }
+
     }
 
 }

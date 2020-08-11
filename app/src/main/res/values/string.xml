@@ -10,7 +10,7 @@
     <string name="main_menu_6">If you want to close the BIOBLU App Press and hold on the screen for two seconds. If you don\'t want to close, slide up or down to continue browsing!</string>
     <string name="main_menu_7">"Wrong Move"</string>
     <string name="main_menu_8">MENDEL\'S 2ST LAW</string>
-    <string name="main_menu_9">MULTIPLE ALELLES</string>
+    <string name="main_menu_9">MULTIPLE ALLELES</string>
 
     //string da classe voice rate
     <string name="congifuracao_0">CONFIGURATION</string>
@@ -194,6 +194,37 @@
     <string name="menu_2lei_3">QUESTIONS</string>
     <string name="menu_2lei_4">SEARCH QUESTIONS</string>
     <string name="menu_2lei_5">You are in the module of the 2nd law of Mendel. you can navigate between the options by swiping up or down, after hearing the chosen option, double tap to proceed</string>
+
+    //string menu polialelia
+    <string name="polialelia1">MULTIPLE ALLELES</string>
+    <string name="polialelia2">TRAINING SCREEN</string>
+    <string name="polialelia3">CROSSING</string>
+    <string name="polialelia4">You are in the multiple alleles module, you can choose the desired option by sliding your finger on the screen.</string>
+
+    //string select gene polialelia
+    <string name="select_polialelia1">CROSSING</string>
+    <string name="select_polialelia2">C</string>
+    <string name="select_polialelia3">Ch</string>
+    <string name="select_polialelia4">Cch</string>
+    <string name="select_polialelia5">Ca</string>
+    <string name="select_polialelia8">Dominance: C> Cch> Ch> Ca</string>
+    <string name="select_polialelia9">Genotype</string>
+    <string name="select_polialelia10">CC, C Cch, C Ch and C Ca</string>
+    <string name="select_polialelia11">CchCch, CchCh and CchCa</string>
+    <string name="select_polialelia12">ChCh and Ch Ca</string>
+    <string name="select_polialelia13">CaCa</string>
+    <string name="select_polialelia14">Phenotype</string>
+    <string name="select_polialelia15">Wild or Aguti</string>
+    <string name="select_polialelia16">chinchilla</string>
+    <string name="select_polialelia17">Himalaya</string>
+    <string name="select_polialelia18">Albino</string>
+    <string name="select_polialelia19">Wild</string>
+    <string name="select_polialelia20">Chinchilla</string>
+    <string name="select_polialelia21">Himalaia</string>
+    <string name="select_polialelia22">Albino</string>
+    <string name="select_polialelia23">you\'re on the screen for choosing polyalelia genes. you must select 4 alleles, where the first two will refer to the first rabbit, and the last two to the second rabbit. after that you will be redirected to the crossing screen</string>
+    <string name="select_polialelia24">Gene confirmed </string>
+
 
 
 

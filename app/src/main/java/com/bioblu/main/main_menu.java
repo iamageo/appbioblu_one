@@ -19,6 +19,7 @@ import com.bioblu.R;
 import com.bioblu.controllers.OuvinteTelaTutorial;
 import com.bioblu.first_law.activity_menu;
 import com.bioblu.second_law.activity_menu_2law;
+import com.bioblu.second_law.activity_menu_polialelia;
 import com.bioblu.second_law.activity_select_gene_coelho;
 
 import java.io.BufferedReader;
@@ -171,10 +172,10 @@ public class main_menu extends AppCompatActivity {
                             startActivity(intent);
                             break;
                         }
-                        case "MULTIPLE ALELLES":
+                        case "MULTIPLE ALLELES":
                         case "ALELOS MÚLTIPLOS": {
                             finish();
-                            Intent intent = new Intent(getApplicationContext(), activity_select_gene_coelho.class);
+                            Intent intent = new Intent(getApplicationContext(), activity_menu_polialelia.class);
                             intent.putExtra("velocidade", velocidade);
                             startActivity(intent);
                             break;

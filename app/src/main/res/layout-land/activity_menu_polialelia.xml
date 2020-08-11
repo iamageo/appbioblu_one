@@ -14,58 +14,52 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="60dp"
-        android:layout_height="61dp"
+        android:layout_width="49dp"
+        android:layout_height="59dp"
         android:contentDescription="@string/ic_share"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toStartOf="@+id/guideline28"
-        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="@+id/guideline29"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
         app:srcCompat="@drawable/ic_device" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="60dp"
-        android:layout_height="61dp"
+        android:layout_width="49dp"
+        android:layout_height="59dp"
         android:contentDescription="@string/imagem_tutorial1"
-        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toStartOf="@+id/guideline28"
         app:layout_constraintStart_toStartOf="@+id/guideline29"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        app:layout_constraintTop_toTopOf="@+id/guideline45"
         app:srcCompat="@drawable/ic_overscan" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.26" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.48" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.66" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline29"
@@ -84,7 +78,7 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toTopOf="@+id/guideline9" />
+        app:layout_constraintTop_toTopOf="@+id/guideline45" />
 
     <TextView
         android:id="@+id/lista_polialelia_id_2"
@@ -100,8 +94,8 @@
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="60dp"
-        android:layout_height="61dp"
+        android:layout_width="49dp"
+        android:layout_height="59dp"
         android:layout_marginBottom="8dp"
         android:background="@color/transparent"
         android:contentDescription="@string/ic_poli"
@@ -116,12 +110,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.24" />
+        app:layout_constraintGuide_percent="0.32" />
 
     <ImageView
         android:id="@+id/imageView24"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:contentDescription="@string/logo"
         app:layout_constraintBottom_toTopOf="@+id/guideline88"
         app:layout_constraintEnd_toStartOf="@+id/guideline28"
@@ -157,27 +151,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.13" />
-
-    <ImageView
-        android:id="@+id/imageView36"
-        android:layout_width="58dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="5dp"
-        android:contentDescription="@string/logo_ufpa"
-        android:src="@drawable/logo_ufpa"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/ppca"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
